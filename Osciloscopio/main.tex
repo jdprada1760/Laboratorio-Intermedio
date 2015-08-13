@@ -153,7 +153,26 @@ V(t) = V_0 e^{\frac{-\gamma t}{2}}\cos(\omega_a t + \delta)
 \section{\label{sec:level1}Resultados y An\'alisis}
 
 \subsection{\label{sec:level2}Circuito RC en serie
+Para esta manipulaci\'on se utilizaron dos combinaciones de resistencia y capacitor. En primer lugar, $R = 470\Omega$ y $C=470\mu F$. En segundo lugar, se variarion los valores como m\'ultiplos de 10 de la siguiente manera: $R=470\Omega$ y $C = 470nF$. Para la primera configuraci\'on el generador de onda se ajust\ó para generar una onda cuadrada, de tal manera que se pudiera simular un impulso de corriente directa. Dado que el valor nominal esperado de $\tau$ era de 22ms, se ajust\'o la frecuencia del circuito a 5Hz para que en cada pico se pudiera apreciar significativamente el decaimiento del voltaje en el sistema.
 
+Se procedi\'o a medir $\tau$ buscando un valor en la curva de decaimiento que correspondiera al 37\% del valor m\áximo de voltaje alcanzdo que era de $V_max=155\pm 1V$. Su 37\% correspondiente es de 57.35V, que, por cuestiones de resoluci\'on s\'olo se pudo llegar a medir 57V. Dado que no se cambiaron ni la amplitud ni la frecuencia de la señal entrante, este valor deb\'ia ser el mismo para ambos circuitos aunque deb\'ia tomarles tiempos distintos en alcanzarlo. Los datos se consignan tabla 1.
+
+Aunque se esperaba una diferencia, \'esta s\'olo deb\'ia ser ser de orden de magnitud, pero los d\'igitos deb\'ian permanecer iguales, lo cual no ocurri\'o. Se puede apreciar claramente una diferencia de alrededor de la mitad del valor esperado, y dado que no se cambiaron los par\ámetros iniciales, se presume que el capacitor o la resistencia pod\ían estar mostrando un desgaste y no estaban funcionando a su capacidad completa.
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+$C$ (F) & $R$ ($\Omega$) & $\tau$ (ms) & Proceso
+\hline
+470\times 10^{-6} & 470 & 276 & Carga\\
+470\times 10^{-6} & 470 & 272 & Descarga\\
+470\times 10^{-9} & 470 & 100 & Carga\\
+470\times 10^{-9} & 470 & 108 & Descarga\\
+\hline
+\end{tabular}
+\caption{Tiempos de carga y descarga, circuito RC en serie}
+\end{table}
 
 \subsection{\label{sec:level2}Circuito RLC Forzado}
 En este montaje utilizamos los valores $R = 0.8\Omega$, $L = 2mH$ y $C = 47nF$. Como se puede inferir, decidimos tomar \'unicamente la resistencia del inductor y dem\'as componentes del circuito. Con esta configuraci\'on pod\'iamos apreciar mejor la curva de resonancia y determinar mejor su m\'aximo. Una vez identificado el m\'aximo de amplitud, tomamos 16 datos de frecuencia y voltaje (pp y rms) alrededor del m\'aximo. Dichos datos se presentan en la tabla \ref{table:resonancia}. \\
