@@ -141,7 +141,7 @@ I = \frac{1}{2}\epsilon_0{E^{\parallel}}^2 = \frac{1}{2}\epsilon_0{E0}^2{\cos^2{
 Si se pone un polarizador en medio de estos dos, con desfase $\theta_2$ con respecto a la luz incidente, la intensidad estará dada al aplicar \ref{eq:polarizador} dos veces, teniendo en cuenta que el desfase entre los dos polarizadores es $theta_1-theta_2$:\\
 
 \begin{equation}
-I = \frac{1}{2}\epsilon_0{E0}^2{\cos^2{\theta_2}}\cos^2{\theta_1-theta_2} \propto \cos^2{\theta_1}\cos^2{\theta_1-\theta_2}
+I = \frac{1}{2}\epsilon_0{E0}^2{\cos^2{\theta_2}}\cos^2{ \left( \theta_1-\theta_2 \right) } \propto \cos^2{ \theta_1}\cos^2{ \left( \theta_1-\theta_2 \right) }
 \label{polarizador2}
 \end{equation}
 
@@ -156,10 +156,33 @@ d\sin{\theta} = n\lambda
 
 Donde $\theta$ se refiere al ángulo respecto al centro de la rejilla de difracción donde se toma la medida de intensidad de la luz.\\
 
+Con el experimento de la doble rendija se puede introducir al campo de la interferometría, donde se busca medir distancias del orden de la longitud de onda con la que se trabaja, al mirar la patrones de interferencia o simplemente la distancia entre los máximos o mínimos que ocasiona la superposición de dos haces de luz que han tomado caminos diferentes. El principio de interferencia por diferencia de fases de haces de luz es el principio detrás de experimentos importantes actuales como los detectores de ondas gravitacionales, y de experimentos que hicieron historia como el de Michelson-Morley.\\
+
+Una de las formas de hacer interferometría con ondas esféricas es el espejo de Lloyd. En dicho montaje, mostrado en la figura \cite{fig:Lloyd} se tiene un material conductor paralelo a la dirección emisor-receptor, situado a mitad de camino entre estos dos instrumentos, cuya distancia perpendicular se puede variar para provocar interferencia entre la onda que se refleja en el conductor y la onda que toma el camino emisor-receptor. Un análisis sencillo de la diferencia de caminos, asumiendo que la onda se propaga esféricamente, nos dice que hay interferencia constructiva cuando se tiene:\\
+
+\begin{equation}
+D-2{\left(d^2 + {\left(\frac{D}{2}\right)}^2\right)}^\frac{1}{2} = n\lambda
+\label{Lloyd}
+\end{equation}
+
+Donde $D$ es la distancia del receptor al emisor, $d$ es la distancia del espejo al centro de la trayectoria, $\lambda$ es la longitud de onda de la luz incidente, y $n$ es un entero.\\
+
+De este experimento de interferometría se puede notar claramente que la condición de interferencia no es lineal, además, al alejar el espejo, se disminuye la intensidad de la onda que se refleja (asumiendo que se propaga esféricamente), lo cual altera un poco la condición de interferencia.\\
+
+Un experimento de interferometría que no es afectado por estos factores de no linealidad y de variación de la intensidad, es el interferómetro de Michelson y el de Fabry-Perot. Estos interferómetros trabajan bajo el mismo principio y lo único que los diferencia es el ordenamiento espacial de los elementos. El experimento de Michelson es mostrado en la figura \cite{fig:Michelson} y consiste en superponer dos haces de luz que han tomado distintos caminos con la ayuda de un material semi-transparente. El de Fabry-Perot es análogo (figura \cite{fig:fabry}, sin embargo, los materiales semi-transparentes no están dispuestos a $45°$ sino en medio del receptor y el transmisor.  En este caso, la relación de interferencia para máximos es simple de deducir y simple en general:\\
+
+\begin{equation}
+d = n\frac{\lambda}{2}
+\label{Michelson}
+\end{equation}
+
+Donde $d$ es la distancia a la que se corre el receptor o el emisor , entre dos máximos o mínimos. \\
+
 De esta manera, muchos otros fenómenos ópticos pueden ser caracterizados con la teoría electromagnética clásica, sin embargo, no es objetivo de este informe describirlos todos .\\ 
-
-
-
+\begin{equation}
+D-2{\left(d^2 + {\left(\frac{D}{2}\right)}^2\right)}^\frac{1}{2} = n\lambda
+\label{Lloyd}
+\end{equation}
 \section{\label{sec:level1}Montaje experimental}
 El equipo que se utiliz\'o durante la práctica consist\'ia de dos generadores de onda, un osciloscopio, capacitores, inductores y resistencias de diferentes valores.\\
 
