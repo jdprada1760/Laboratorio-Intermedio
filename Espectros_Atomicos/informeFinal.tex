@@ -103,7 +103,7 @@ Debido a que no conocíamos en principio la relación de la medida de la regla p
 \centering
  \begin{tabular}{|c|c|} 
  \hline
- $Regla (\pm0.2)$ & $Longitud de onda (nm)$ \\ [0.5ex] 
+ $Regla (\pm0.1)$ & $Longitud de onda (nm)$ \\ [0.5ex] 
  \hline\hline
 5.2 &		447.18\\
 8.6 &		501.57\\
@@ -136,7 +136,7 @@ En la tabla \ref{table:hidrogeno} se encuentran consignados los datos teóricos 
 \centering
  \begin{tabular}{|c|c|c|c|c|} 
  \hline
- $Regla (\pm0.2) $ & $\lambda_{Exp} (nm)$ & $\lambda_{Teo} (nm)$ & $\epsilon$ & $ n \rightarrow 2 $\\ [0.5ex] 
+ $Regla (\pm0.1) $ & $\lambda_{Exp} (nm)$ & $\lambda_{Teo} (nm)$ & $\epsilon$ & $ n \rightarrow 2 $\\ [0.5ex] 
  \hline\hline
 3.8 &	441.01 $\pm$ 8.9 & 434.057 & 1.6\% & 5\\
 7.4 &	475.15 $\pm$ 9.9 & 486.135 & 2.3\% & 4\\
@@ -148,7 +148,7 @@ En la tabla \ref{table:hidrogeno} se encuentran consignados los datos teóricos 
  \label{table:hidrogeno}
 \end{table}
 
-De esta tabla cabe resaltar que las líneas teóricas caen en el rango de error de las experimentales y que los errores son razonables. Estos errores, como ya se había mencionado corresponden a la propagación de error de la resolución de la regla. Si uno mira con atención el error absoluto asociado a cada medición es del mismo orden de magnitud que el error de resolución, esto es, $0.2/d$, donde $d$ es la conocida medida en la regla. Existen además otras fuentes de error como el índice de refracción del aire, el cual puede variar un poco la longitud de onda observada respecto a la del vacío, sin embargo, este error es muy pequeño. Se puede afirmar que el índice de refracción del aire es $1$ cometiendo un error del orden de $0.1\%$.\\
+De esta tabla cabe resaltar que las líneas teóricas caen en el rango de error de las experimentales y que los errores son razonables. Estos errores, como ya se había mencionado corresponden a la propagación de error de la resolución de la regla. Si uno mira con atención el error absoluto asociado a cada medición es del mismo orden de magnitud que el error de resolución, esto es, $0.1/d$, donde $d$ es la conocida medida en la regla. Existen además otras fuentes de error como el índice de refracción del aire, el cual puede variar un poco la longitud de onda observada respecto a la del vacío, sin embargo, este error es muy pequeño. Se puede afirmar que el índice de refracción del aire es $1$ cometiendo un error del orden de $0.1\%$.\\
 
 Si graficamos ahora los valores de $frac{1}{\lambda_{Exp}}$ y $\frac{1}{n^2}$, encontraríamos, gracias a la ecuación \ref{eq:balmer} que la pendiente sería la constante de Rydberg. En la figura \ref{fig:balmer} se pueden apreciar los datos de la tabla \ref{table:hidrogeno} graficados con su respectivo ajuste lineal.\\
 
@@ -170,7 +170,7 @@ Una vez calculada la constante de Rydberg se procedió a estudiar los espectros 
 \centering
  \begin{tabular}{|c|c|c|c|c|} 
  \hline
- $Atomo$ & $Regla (\pm0.2) $ & $\lambda_{Exp} (nm)$ & $\lambda_{Teo} (nm)$ & $\epsilon$\\ [0.5ex] 
+ $Atomo$ & $Regla (\pm0.1) $ & $\lambda_{Exp} (nm)$ & $\lambda_{Teo} (nm)$ & $\epsilon$\\ [0.5ex] 
  \hline\hline
  Hg & 4.1  &	441.99 $\pm$ 9.0  & 435.83 & 1.4\% \\
  Hg & 10.5 &	543.77 $\pm$ 12.2 & 546.07 & 0.42\% \\
@@ -193,16 +193,24 @@ Una vez calculada la constante de Rydberg se procedió a estudiar los espectros 
 
 De esta tabla es importante notar que la mayoría de las líneas calculadas tienen longitudes de onda teórica que entran dentro del rango de error calculado. También es importante notar que el error calculado con propagación de error sobre la curva de calibración tiene a ser mayor a mayores longitudes de onda, lo cual claramente no es característico de una relación lineal. Si hubieramos tomado la relación lineal en vez de la cuadrática, los errores para longitudes de onda grandes probablemente serían muy pequeños para dejar entrar el valor teórico en su rango. En general, la línea en la que se obtuvo más error era una línea a la que no se le pudo encontrar un valor cercano en la base de datos \cite{base}. Debido a este factor, y a la grán precisión con la que se contó en el experimento en general podemos decir que estas líneas podrían haber sido provocadas por isótopos de carga del átomo de Argón. En este caso, debido a la falta de un electrón, el potencial efectivo varía la ecuación de onda de los electrones , afectando el valor de la luz emitida en los saltos de energía. A pesar de esto, en general, se encontraron resultados satisfactorios, con muy buena exactitud en la medida.\\
 
+La segunda fuente de error más importante, confiando en el buen manejo experimental, era el grosor de las líneas espectrales. Sin embargo, el montaje permitía reducir dicho grosor hasta un valor cercano a la resolución mínima de la regla.\\
+
+En pocos casos encontramos errores relativamente grandes del orden del $2\%$ y del $5\%$, lo cual lo atribuimos a que no se pudo encontrar un valor cercano en la base de datos de espectros \cite{base}. En estos casos presumimos que dichas líneas podían pertenecer a isótopos de carga de los átomos observados.\\
+
+En cuanto a la constante de Rydberg, se obtuvo un error ($0.06\%$) un orden de magnitud menor al error absoluto común de las medidas ($0.1\%$), lo cual era de esperarse, pues se utilizó un set de 3 datos para calcularla. Con esto pudimos observar la importancia del análisis estadístico en la reducción del error experimental.\\
+
 
 
 
 \section{\label{sec:level1}Conclusiones}
- 
+En este laboratorio logramos observar correctamente la propagación del error dado por la mínima resolución de la regla usada. Debido a la mínima cantidad de fuentes de error en el experimento dada la calidad del montaje y la cuantización presente en el modelo teórico, se pudo observar que la fuente de error más importante provenía de la propagación del error de las ecuaciones del ajuste y las demás ecuaciones usadas. En general se obtuvieron valores experimentales con rangos de error en el que entraba el valor teórico. Además, la razón del error de propagación y la medida era en cada caso del mismo orden de magnitud, o al menos de un orden de magnitud similar a la razón entre la resolución mínima y la medida en la regla. Esto confirma nuestra afirmación.\\
+
+ En este laboratorio logramos obtener la constante de Rydberg con un porcentaje de error de
 
 
 \begin{thebibliography}{99} 
-\bibitem{ondas} A.P. French,{\it vibraciones y ondas}{Editorial Reverté s.a.,1971}, and references.\\ 
-\bibitem{guia} Universidad de los Andes,{\it Guía 1 Osciloscopio}{2015}, and references.\\ \end{thebibliography}
+\bibitem{base}{\it Physical Measurement Laboratory}{http://www.nist.gov/pml/index.cfm}.\\ 
+\\ \end{thebibliography}
 
 
 
