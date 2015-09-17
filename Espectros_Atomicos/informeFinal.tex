@@ -76,11 +76,11 @@
              %  but any date may be explicitly specified
 
 \begin{abstract}
-
+En este laboratorio utilizamos un espectrómetro de prisma para analizar espectros atómicos de diferentes átomos como el Hidrógeno, Mercurio, el Argón y el Kriptón. Utilizamos las líneas espectrales del Helio para calibrar el aparato y descubrimos que la relación de calibración que mejor se ajustaba era una parábola. Para los gases Mercurio, Argón y Kriptón se compararon las longitudes de onda de las líneas observadas y se obtuvieron valores muy cercanos a los valores teóricos, con errores absolutos alrededor de $0.5\%$. Para el Hidrógeno, se calculó la constante de Rydberg experimentalmente con las 3 líneas observadas. El valor obtenido fué de $R_{Exp} = 0.011038 \pm 0.00014$ con un error de $0.6\%$ respecto al valor teórico. En general los errores tenidos en cuenta fueron los más influyentes y se obtuvieron datos con rangos de error que incluían a los valores teóricos, lo cual da cuenta de la calidad del experimento y del análisis de error.\\
 \end{abstract}
 
 
-\keywords{}%Use showkeys class option if keyword
+\keywords{Espectroscopía, Espectros Atómicos, Modelo de Bohr, Rydberg}%Use showkeys class option if keyword
                               %display desired
 \maketitle
 
@@ -88,16 +88,101 @@
 
 \section{\label{sec:level1}Introducci\'on}
 
+Durante el siglo XX el fenóemeno de emisión de líneas espectrales era desconcertante para la comunidad científica dado que los modelos atómicos de aquel entonces fallaban rotundamente en describir el mismo. No fue sino hasta 1913 que Niels Bohr planteó un nuevo modelo atómico que no sólo describía con espléndida simplicidad el fenómeno de espectros atómicos, sino que también mostraba encajar perfectamente con los resultados experimentales y las constantes empíricas que se habían descubierto hasta el momento. \\ 
+
+El modelo de Bohr está basado en cuatro postulados que permiten describir el espectro del átomo de hidrógeno \cite{moderna}. Iones hidrogenoides (con un sólo electrón en la última capa) también están bien descritos por el modelo. \\
+
+En primer lugar, se asume que electrón se mueve alrededor del núcleo atómico debido a la interacción Coulombiana. El movimiento está descrito por las leyes de la física clásica. Es por esto que a este modelo también se le conoce como 'modelo planetario'. \\
+
+En segundo lugar, el electrón, al moverse en una órbita, no emite radiación electromágnetica. Se dice que el electrón se encuentra en un estado no radiante o estado estacionario. De otra manera, el electrón caería eventualmente y chocaría con el núcleo. \\
+
+Así pues, en tercer lugar, se tiene que las única órbitas permitidas son aquellas en que la magnitud del momento angular tenga el valor $ L = \hbar n $. Este modelo probaría éxtiosamente también que el momento angular está cuantizado. \\
+
+Por último, cuando un electrón salta de una órbita con energía $ E_i $ hasta una órbita con energía $ E_f $, este emite radiación electromagnética con frecuencia $ \nu = \frac{(E_i-E_f)}{h} $. \\
+
+Ahora bien, la derivación del modelo parte, como se mencionó, de hacer uso de relaciones del movimiento clásico. Haciendo el balance de fuerzas sobre el electrón se encuentra la siguiente relación:\\
+
 \begin{equation}
-V(t) = V_0 e^{\frac{-\gamma t}{2}}\cos(\omega_a t + \delta)
-\label{eq:amortiguado}
+F=\frac{K_e e^2}{r^2}=\frac{m_e v^2}{r} \to \frac{K_e e^2}{2r}=\frac{m_e v^2}{2}
+\label{eq:fuerza}
 \end{equation}
+
+Al hacer la suma de energía, (cinética más potencial) $ E = K + V $ se tiene, por la ecuación \ref{eq:fuerza}:\\
+
+\begin{equation}
+E=\frac{m_e e^2}{2}-\frac{K_e e^2}{2} = -\frac{K_e e^2}{2r}
+\label{eq:energia}
+\end{equation}
+
+Como tenemos que el momento angular está cuantizado, se puede obtener una expresión para la velocidad. Si $ L = n\hbar = m_e vr $.\\
+
+Se tiene que:\\
+
+\begin{equation}
+	v=\frac{n\hbar}{m_e r}
+\end{equation}
+
+De esta manera, reemplazando en la ecuación \ref{eq:fuerza} se obtiene la siguiente relación:\\
+
+\begin{equation}
+	\frac{K_e e^2}{2r} = \frac{m_e (\frac{n\hbar}{m_e r})}{2}
+\end{equation}
+
+Luego,\\
+
+\begin{equation}
+	r=\frac{(n\hbar)^2}{m_e e^2 K_e}
+\label{eq:radio}
+\end{equation}
+
+Esta expresión muestra que los electrones sólo pueden estar, como se predijo, en ciertos radios no radiantes que están descritos por la ecuación \ref{eq:radio}.\\
+
+Reemplazando en la ecuación \ref{eq:energia}, podemos encontrar que la energía de cada una de estas órbitas está también cuantizada de la siguiente forma:\\
+
+\begin{equation}
+	E_n = \frac{\alpha}{n^2 }\ \ ;\ \ \alpha = -\frac{m_e (K_e)^2 e^4}{2\hbar^2}
+\end{equation}
+
+Ahora, se tiene que $ (E_i-E_f)/h = \nu = c/\lambda  $ con c, la velocidad de la luz en el vacío y $ \lambda $ la longitud de onda de la radiación emitida. De esta manera:\\
+
+\begin{equation}
+	\frac{1}{\lambda} = \frac{\alpha}{hc}\left(\frac{1}{f^2} - \frac{1}{i^2}\right) = R_H\left(\frac{1}{f^2} - \frac{1}{i^2}\right) 
+\end{equation}
+
+En este caso, i,f son lo índies de los estados incial y final del electrón. $ R_H $ es una constante hallada muchos años antes llamada constante de Rydberg, con un valor de $ R_H = 1.0967\times 10^7 m^{-1} $. \\
+
+La gran muestra del éxito del modelo de Bohr es que este es el mismo valor que se obtiene al hacer la operación $ \frac{\alpha}{hc} $.\\
+
+Ahora, si analizamos para el caso de los saltos de energía que terminan en el estado $f=2$, obtenemos la conocida serie de Balmer. Esta serie está dada por la ecuación \ref{eq:balmer}, y es bien conocida dado que en el hidrógeno los primeros 3 términos de esta serie producen fotones en el espectro visible.\\ 
+
+\begin{equation}
+	\frac{1}{\lambda} = R_H\left(\frac{1}{2} - \frac{1}{i^2}\right) 
+\label{eq:balmer}
+\end{equation}
+
 
 \section{\label{sec:level1}Montaje experimental}
 
+Para este experimento se hizo uso de un espectrómetro prisma. En este caso el prisma conduciría no sólo la luz de la lámpara emisora y la separaría en sus diferentes componentes, sino que serviría para enfocar a la vez una escala de medición para comparar adecuadamente la distancia entre líneas y poder encontrar una relación de la cual adquirir experimentalmente el valor de la constante de Rydberg. \\
+
+Para esto, en primer lugar, se calibró el espectrómetro con una lámpara de Helio puesto que las líneas de este se pueden percibir con mucha claridad en el espectro visible. Una vez medida la escala y determinado el espaciamiento entre líneas se prosiguió a estudiar cualitativamente el espectro de Hg, Ar y Kr. Con ello se pretendía mostrar la existencia de varias líneas debido a una configuración electrónica más complicada, pero dado que no eran átmos hidrogenoides no se le dió mucha importancia a la relación entre las distintas líneas espectrales. \\
+
+Sin mover el montaje, se cambiaría a una lámpara de H. Para este átomo está diseñado el modelo de Bohr, así que se midió la separación entre las líneas más visibles de este espectro y se procedió a mirar su relación para obtener la constante de Rydberg. \\
+
+En la figura \ref{fig:montaje} se puede apreciar el montaje utilizado.\\
+
+\begin{figure}[h!]
+\caption{Montaje experimental}
+\centering
+\includegraphics[width=0.45\textwidth]{montaje}
+\label{fig:montaje}
+\end{figure}
+
+En esta figura se puede apreciar al fondo el colimador junto a los tubos espectrales. El colimador permitía enfocar la luz de los tubos espectrales hacia el prisma, el cual se puede ver situado en medio de la mesa giratoria. A la izquierda podemos observar la fuente de luz auxiliar, la cual permitía iluminar la regla. El telescopio, que se observa de frente en la figura, permitía enfocar las imágenes provenientes de la regla y de los gases superpuestas con ayuda del prisma.\\
+
 \section{\label{sec:level1}Resultados y An\'alisis}
 \subsection{\label{sec:level2}Calibración con He}
-Debido a que no conocíamos en principio la relación de la medida de la regla proporcionada, y tampoco conocíamos las unidades de dicha regla, necesitabamos de unas líneas espectrales de referencia para poder calibra el montaje. En nuestro caso, dado que queríamos estudiar las líneas del hidrógeno y la constante de Rydberg, usamos helio para dicho calibre. El helio tiene cuatro líneas espectrales fuertes en el espectro visible, por lo cual resulta un buén candidato de referencia. Los valores teóricos de longitud de onda de las líneas observadas de Helio junto a sus respectivas distancias observadas en la regla, se encuentran consignadas en la tabla \ref{table:helio}.\\
+Debido a que no conocíamos en principio la relación de la medida de la regla proporcionada, y tampoco conocíamos las unidades de dicha regla, necesitabamos de unas líneas espectrales de referencia para poder calibra el montaje. En nuestro caso, dado que queríamos estudiar las líneas del hidrógeno y la constante de Rydberg, usamos helio para dicho calibre. El helio tiene cuatro líneas espectrales fuertes en el espectro visible, por lo cual resulta un buén candidato de referencia. Los valores teóricos de longitud de onda de las líneas observadas de Helio junto a sus respectivas distancias observadas en la regla, se encuentran consignados en la tabla \ref{table:helio}.\\
 
 Es preciso resaltar que las líneas que ponemos en la tabla eran las líneas que eran visibles dada la luminosidad del bombillo de la regla. Posiblemente habían otras líneas más tenues en el espectro visible pero debido a la intensidad de la fuente del bombillo, estas líneas eran opacadas por la luz de fondo. Esta cuestión reduce nuestra muestra de líneas para la calibración y para el resto del experimento, pero no afecta el error particular para cada línea, mas bién, afecta un poco el análisis estadístico. \\
 
@@ -120,19 +205,19 @@ Es preciso resaltar que las líneas que ponemos en la tabla eran las líneas que
 
 En este caso, no conocíamos las unidades de la regla, por lo que las distancias medidas las tomamos adimensionales. En principio pensábamos que la relación entre la medida observada en la regla era lineal, sin embargo, si se procedía a hacer cálculos con este supuesto, se obtenían errores relativamente grandes para algunas longitudes de onda mas que otras. Por esto, pensamos que la relación de calibración no era necesariamente lineal. De esta manera, la siguiente relación más simple que se nos ocurría, teniendo en cuenta que el manejo de distancias y perspectiva es cuadrático, era una parábola. Al final descubrimos que dicha relación cuadrática se ajustaba muy bien a las líneas del helio. En la figura \ref{fig:calibre} se puede apreciar una gráfica de la longitud de onda de las líneas del helio contra la distancia medida. En esta misma figura graficamos el mejor ajuste primero suponiendo que la relación era lineal y luego suponiendo que era cuadrática; claramente el mejor ajuste, que pasa por todos los puntos según el error de resolución es el cuadrático.\\
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \caption{Curva de calibración con las líneas espectrales del Helio}
 \centering
 \includegraphics[width=0.45\textwidth]{calibre}
 \label{fig:calibre}
 \end{figure}
 
-Con el ajuste cuadrático y los datos proporcionados podemos estimar el error asociado a cada parámetro de la parábola teniendo en cuenta la variación de la "lokelihood", una medida de qué tan cercano es el ajuste a los datos experimentales. Estos errores vienen casi dados por la rutina de optimización de Scipy. Una vez obtenidos estos errores se puede hacer la conocida propagación de error para calcular el error de longitud de onda asociado a cada medida de distancia que se introduzca en el ajuste.\\
+Con el ajuste cuadrático y los datos proporcionados podemos estimar el error asociado a cada parámetro de la parábola teniendo en cuenta la variación de la "likelihood", una medida de qué tan cercano es el ajuste a los datos experimentales. Estos errores vienen casi dados por la rutina de optimización de Scipy. Una vez obtenidos estos errores se puede hacer la conocida propagación de error para calcular el error de longitud de onda asociado a cada medida de distancia que se introduzca en el ajuste.\\
 
 \subsection{\label{sec:level2}Constante de Rydberg}
 Una vez calibrado el instrumento, podemos proceder a analizar los datos de diferentes espectros de distintos átomos, diferentes del helio claramente. En este caso, analizaremos las líneas espectrales del hidrógeno y su relación con las series de Balmer para encontrar la constante de Rydberg de acuerdo a la ecuación \ref{eq:balmer}.\\
 
-En la tabla \ref{table:hidrogeno} se encuentran consignados los datos teóricos y experimentales con los respectivos errores para las líneas espectrales del hidrógeno. Aquí también consignamos el la transición de niveles energéticos que provocan cada línea.\\
+En la tabla \ref{table:hidrogeno} se encuentran consignados los datos teóricos y experimentales con los respectivos errores para las líneas espectrales del hidrógeno. Aquí también consignamos la transición de niveles energéticos que provocan cada línea.\\
 
 \begin{table}[h!]
 \centering
@@ -152,7 +237,7 @@ En la tabla \ref{table:hidrogeno} se encuentran consignados los datos teóricos 
 
 De esta tabla cabe resaltar que las líneas teóricas caen en el rango de error de las experimentales y que los errores son razonables. Estos errores, como ya se había mencionado corresponden a la propagación de error de la resolución de la regla. Si uno mira con atención el error absoluto asociado a cada medición es del mismo orden de magnitud que el error de resolución, esto es, $0.1/d$, donde $d$ es la conocida medida en la regla. Existen además otras fuentes de error como el índice de refracción del aire, el cual puede variar un poco la longitud de onda observada respecto a la del vacío, sin embargo, este error es muy pequeño. Se puede afirmar que el índice de refracción del aire es $1$ cometiendo un error del orden de $0.1\%$.\\
 
-Si graficamos ahora los valores de $frac{1}{\lambda_{Exp}}$ y $\frac{1}{n^2}$, encontraríamos, gracias a la ecuación \ref{eq:balmer} que la pendiente sería la constante de Rydberg. En la figura \ref{fig:balmer} se pueden apreciar los datos de la tabla \ref{table:hidrogeno} graficados con su respectivo ajuste lineal.\\
+Si graficamos ahora los valores de $\frac{1}{\lambda_{Exp}}$ y $\frac{1}{n^2}$, encontraríamos, gracias a la ecuación \ref{eq:balmer} que la pendiente sería la constante de Rydberg. En la figura \ref{fig:balmer} se pueden apreciar los datos de la tabla \ref{table:hidrogeno} graficados con su respectivo ajuste lineal.\\
 
 \begin{figure}[h]
 \caption{Serie de Balmer del Hidrógeno}
@@ -194,23 +279,24 @@ En estos casos cabe resaltar que para los gases nobles observamos un espectro co
  \label{table:otros}
 \end{table}
 
-De esta tabla es importante notar que la mayoría de las líneas calculadas tienen longitudes de onda teórica que entran dentro del rango de error calculado. También es importante notar que el error calculado con propagación de error sobre la curva de calibración tiene a ser mayor a mayores longitudes de onda, lo cual claramente no es característico de una relación lineal. Si hubieramos tomado la relación lineal en vez de la cuadrática, los errores para longitudes de onda grandes probablemente serían muy pequeños para dejar entrar el valor teórico en su rango. En general, la línea en la que se obtuvo más error era una línea a la que no se le pudo encontrar un valor cercano en la base de datos \cite{base}. Debido a este factor, y a la grán precisión con la que se contó en el experimento en general podemos decir que estas líneas podrían haber sido provocadas por isótopos de carga del átomo de Argón. En este caso, debido a la falta de un electrón, el potencial efectivo varía la ecuación de onda de los electrones , afectando el valor de la luz emitida en los saltos de energía. A pesar de esto, en general, se encontraron resultados satisfactorios, con muy buena exactitud en la medida.\\
+De esta tabla es importante notar que la mayoría de las líneas calculadas tienen longitudes de onda teórica que entran dentro del rango de error calculado. También es importante notar que el error calculado con propagación de error sobre la curva de calibración tiende a ser mayor a mayores longitudes de onda, lo cual claramente no es característico de una relación lineal. Si hubieramos tomado la relación lineal en vez de la cuadrática, los errores para longitudes de onda grandes probablemente serían muy pequeños para dejar entrar el valor teórico en su rango. En general, la línea en la que se obtuvo más error era una línea a la que no se le pudo encontrar un valor cercano en la base de datos \cite{base}. Debido a este factor, y a la grán precisión con la que se contó en el experimento en general podemos decir que estas líneas podrían haber sido provocadas por isótopos de carga del átomo de Argón. En este caso, debido a la falta de un electrón, el potencial efectivo varía la ecuación de onda de los electrones , afectando el valor de la luz emitida en los saltos de energía. A pesar de esto, en general, se encontraron resultados satisfactorios, con muy buena exactitud en la medida.\\
 
 \section{\label{sec:level1}Conclusiones}
-En este laboratorio logramos observar correctamente la propagación del error dado por la mínima resolución de la regla usada. Debido a la mínima cantidad de fuentes de error en el experimento dada la calidad del montaje y la cuantización presente en el modelo teórico, se pudo observar que la fuente de error más importante provenía de la propagación del error de las ecuaciones del ajuste y las demás ecuaciones usadas. En general se obtuvieron valores experimentales con rangos de error en el que entraba el valor teórico. Además, la razón del error de propagación y la medida era en cada caso del mismo orden de magnitud, o al menos de un orden de magnitud similar a la razón entre la resolución mínima y la medida en la regla. Esto confirma nuestra afirmación.\\
+En este laboratorio logramos observar correctamente la propagación del error dado por la mínima resolución de la regla usada. Debido a la mínima cantidad de fuentes de error en el experimento dada la calidad del montaje y la cuantización presente en el modelo teórico, se pudo observar que la fuente de error más importante provenía de la propagación del error de las ecuaciones del ajuste y las demás ecuaciones usadas. En general se obtuvieron valores experimentales con rangos de error en el que entraba el valor teórico. Además, la razón entre error de propagación y la medida era en cada caso del mismo orden de magnitud, o al menos de un orden de magnitud similar a la razón entre la resolución mínima y la medida en la regla. Esto confirma nuestra afirmación.\\
 
 La segunda fuente de error más importante, confiando en el buen manejo experimental, era el grosor de las líneas espectrales. Sin embargo, el montaje permitía reducir dicho grosor hasta un valor cercano a la resolución mínima de la regla.\\
 
-En pocos casos encontramos errores relativamente grandes del orden del $2\%$ y del $5\%$, lo cual lo atribuimos a que no se pudo encontrar un valor cercano en la base de datos de espectros \cite{base}. En estos casos presumimos que dichas líneas podían pertenecer a isótopos de carga de los átomos observados.\\
+En pocos casos encontramos errores relativamente grandes del orden del $2\%$, lo cual lo atribuimos a que no se pudo encontrar un valor cercano en la base de datos de espectros \cite{base}. En estos casos presumimos que dichas líneas podían pertenecer a isótopos de carga de los átomos observados.\\
 
-En cuanto a la constante de Rydberg, se obtuvo un error ($0.06\%$) un orden de magnitud menor al error absoluto común de las medidas ($0.1\%$), lo cual era de esperarse, pues se utilizó un set de 3 datos para calcularla. Con esto pudimos observar la importancia del análisis estadístico en la reducción del error experimental.\\
+En cuanto a la constante de Rydberg, se obtuvo un error ($0.6\%$) un orden de magnitud menor al error absoluto común de las medidas ($\approx 1\%$), lo cual era de esperarse, pues se utilizó un set de 3 datos para calcularla. Con esto pudimos observar la importancia del análisis estadístico en la reducción del error experimental.\\
 
-Cualitativamente hablando, pudimos observar la cuantización de los niveles de energía de los átomos. Para el hidrógeno, mercurio y helio pudimos observar este efecto muy marcado, es decir, observamos solo líneas espectrales y prácticamente negrura entre ellas. Sin embargo para los gases nobles, el número de protones y electrones hacían que la función de onda para los electrones permitiera muchos saltos en el espectro visible, lo cual se reflejaba en numerosas líneas espectrales mayoría muy difusas. Por esto, no podemos afirmar que entre dichas líneas había solo negrura y aunque se observó la cuantización en estos gases nobles, el efecto no fue tan marcado.\\
+Cualitativamente hablando, pudimos observar la cuantización de los niveles de energía de los átomos. Para el hidrógeno, mercurio y helio pudimos observar este efecto muy marcado, es decir, observamos solo líneas espectrales y prácticamente negrura entre ellas. Sin embargo para los gases nobles, el número de protones y electrones hacían que la función de onda para los electrones permitiera muchos saltos en el espectro visible, lo cual se reflejaba en numerosas líneas espectrales muy difusas. Por esto, no podemos afirmar que entre dichas líneas había solo negrura y aunque se observó la cuantización en estos gases nobles, el efecto no fue tan marcado.\\
 
 En general, consideramos que obtuvimos resultados satisfactorios en este experimento, con los errores completamente justificados y con una precisión razonable dada la precisión del aparato.\\
 
 \begin{thebibliography}{99} 
 \bibitem{base}{\it Physical Measurement Laboratory}{http://www.nist.gov/pml/index.cfm}.\\ 
+\bibitem{moderna}Serway, A; Moses, C; Moyer, C {\it Modern Physics} { 3rd edition} { Brooks Cole Pub Co} { 2004} \\
 \\ \end{thebibliography}
 
 
