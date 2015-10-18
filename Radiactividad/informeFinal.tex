@@ -359,14 +359,15 @@ En este experimento verificamos la naturaleza estadística de la radiación al t
 
 La distribución de probabilidad que mejor caracteriza el proceso estocástico de decaimiento de s radiactivos es la distribución de Poisson. Esta distribución tiene como característica que su varianza es igual a su promedio, y en términos de la desviación estándar: $\sigma_x^2 = \bar{x}$. Debido a que esta distribución es discreta, hacer cálculos de intervalos de confianza resulta difícil, sin embargo, podemos aproximar su forma de campana como una Gaussiana. En este sentido, se tiene que el $68.27\%$ de los datos estarán concentrados alrededor del promedio con radio igual a una desviación estándar. Si se escoje un radio de $2\sigma$, $95.45\%$ de los datos estarán concentrados en el intervalo, y si se tienen $3\sigma$ (el error absoluto definido para este informe), se tendrá una confianza del $99.73\%$.\\
 
-Teniendo los anteriores datos en cuenta, se puede notar que el porcentaje de error debido a la definición $\delta x = 3\sigma_x$ está dado por $\epsilon = \frac{3\sigma_x}{\bar{x}} = \frac{3}{\bar{x}}$. Esto evidencia la importancia del tiempo en las medidas que tomamos, ya que si se toman conteos por un intervalo de tiempo mayor, el promedio será claramente mayor, y por tanto, el error relativo disminuirá. Cabe aclarar que esta fórmula para el error relativo es válida para una cantidad muy grande de mediciones, idealmente infinita.\\
+Teniendo los anteriores datos en cuenta, se puede notar que el porcentaje de error debido a la definición $\delta x = 3\sigma_x$ está dado por $\epsilon = \frac{3\sigma_x}{\bar{x}} = \frac{3}{\bar{x}}$. Esto evidencia la importancia del tiempo en las medidas que tomamos, ya que si se toman conteos por un intervalo de tiempo mayor, el promedio será claramente mayor, y por tanto, el error relativo disminuirá. Además de esto, con esta propiedad es posible estimar el error asociado a una medida sin tener una muestra estadistica significativamente grande.\\
+
 
 Sin más preámbulos, los datos obtenidos se encuentran consignados en la tabla \ref{table:variaciones} y un histograma donde se pueden apreciar claramente las características de una distribución de Poisson con baja resolución, se encuentra graficado en la figura \ref{fig:variaciones}.\\
 
 \begin{table}[h!]
 \centering
 \begin{tabular}{|c|c|c|c|}
-	\hline $ Medicion $ & $Resultado$ & $ Medicion $ & $Resultado$ \\ 
+	\hline $ N^oMedicion $ & $Resultado(\pm 1)$ & $ N^oMedicion $ & $Resultado(\pm 1)$ \\ 
 	\hline\hline
 	1&65&26&66\\
 	2&63&27&73\\
@@ -397,258 +398,292 @@ Sin más preámbulos, los datos obtenidos se encuentran consignados en la tabla 
  \hline
  \end{tabular} 
   \caption{Variación estadística}
-\label{table:Variaciones} 
+\label{table:variaciones} 
 \end{table}
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\linewidth]{variacion.jpg}
+\caption{Histograma de los conteos medidos}
+\label{fig:variaciones}
+\end{figure}
 
 En este experimento se obtuvo un promedio de 67.16 conteos cada 10 segundos, y una desviación estándar de    7.19 en las mismas unidades. Nótese que la raiz cuadrada del promedio debería ser igual a la desviación estándar si la distribución estudiada es de Poisson. En este caso dicha raiz es de 8.19, que comparada con el valor real, presenta un error de solo $12\%$, lo cual es bastante razonable para un análisis estadístico.\\
 
-Ahora, al verificar el intervalo de confianza que provoca una desviación estándar, descubrimos que el $64\%$ de los datos se encontraban en dicho intervalo, lo cual muestra un error de 6.25\% con el valo esperado de $68\%$.\\
+Ahora, al verificar el intervalo de confianza que provoca una desviación estándar, descubrimos que el $64\pm2\%$ de los datos se encontraban en dicho intervalo, lo cual muestra un error de 6.25\% con el valor esperado de $68\%$.\\
 
 Los errores obtenidos en este montaje son naturales de la calidad estocástica de los procesos involucrados. En principio, para los análisis estadísticos siempre necesitaremos una cantidad infinita de mediciones para obtener conclusiones exactas. A pesar de dichos errores, pudimos identificar la distribución de probabilidad de las medidas como una distribución de Poisson.\\
 
-En primer lugar, para tomar en cuenta la refracción causada por el triángulo, se demostró que éste no hacía mayor cambio en la señal recibida. Así pues, se procedió a determinar el índice de refracción del estireno. \\
+\subsection{\label{sec:level2}Radiactividad en sales} 
+En esta sección verificamos si las muestras de sales $CaCl$, $Cu_2SO_4$, $NaCl$, $KCl$ emitían radiación ionizante. Para ello medimos cuatro veces los conteos que provocaban en el contador Geiger duratnte 60 segundos, y los comparamos con la radiación del ambiente.\\
 
-Para la máxima lectura, se tuvo $ \theta = 10 \pm 1^o $. Por la configuración misma del sistema, se tiene que en el diagrama de la figura \ref{fig:refraccion}, $ \theta_1 = \phi = 20\pm1^o $, siendo $ \phi $ el ángulo menor del triángulo que conforma el prisma. \\
+Los datos obtenidos se encuentran consignados en la tabla \ref{table:sales}.\\
 
-Así, se tiene que $ \theta_2 = \theta_1 + \theta = 30\pm1^o $. Asumiendo el ínidce de refracción del aire como 1, se tiene con la ecuación \ref{eq:refraccion}:
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+	\hline $ Muestra $ & \multicolumn{4}{c|}{$Resultado\ (\pm 1)$ } & $\bar{x}$& $\sigma_x$ \\ 
+	\hline\hline
+	CaCl2&28&22&21&22&23.25&2.77\\
+	Cu2SO4&21&15&32&16&21.0&6.75\\
+	KCl&43&41&44&34&40.5&3.91\\
+	NaCl&25&23&23&16&21.75&3.42\\
+	Ambiente&23&23&23&15&21.0&3.46\\
+	[1ex] 
+ \hline
+ \end{tabular} 
+  \caption{Radiación por diferentes muestras de sales}
+\label{table:sales} 
+\end{table}
+
+De esta tabla, teniendo en cuenta las desviaciones estándares, se puede concluir el cloruro de potasio es claramente radiactivo ya que, teniendo en cuenta el error estadístico, su intervalo no cae en la radiación ambiente; el cloruro de calcio es posiblemente radiactivo ya que, aunque su promedio es mayor, hay una pequeña intersección entre su intervalo de confianza y el de la radiación de ambiente; y el resto de sales, cloruro de sodio y sulfato de cobre, no presentan una diferencia significativa con la radiación de ambiente para tener una conclusión convinvcente.\\
+
+\subsection{\label{sec:level2}Radiactividad en rocas} 
+Al igual que en la sección anterior, verificamos radiactividad esta vez en rocas en lugar de sales. Para esto, hicimos las mismas 4 mediciones de 60 segundos sobre cada una de las muestras y sobre el ambiente. Las rocas utilizadas en este experimento contenían cada una, y por separado, restos de Ba-133, de Cd-109 y Cs-137.\\
+
+Los datos tomados se encuentran en la tabla \ref{table:rocas}.\\
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+	\hline $ Muestra $ & \multicolumn{4}{c|}{$Resultado\ (\pm 1)$ } & $\bar{x}$& $\sigma_x$ \\ 
+	\hline\hline
+	Ba-133&611&639&607&642&624.75&15.85\\
+	Cd-109&81&67&66&70&71.0&5.96\\
+	Cs-137&3279&3198&3146&3186&3202.25&48.31\\
+	Ambiente&24&20&24&22&22.6&1.66\\
+	[1ex] 
+ \hline
+ \end{tabular} 
+  \caption{Radiación por diferentes muestras de rocas}
+\label{table:rocas} 
+\end{table}
+
+En este caso encontramos que todas las rocas medidas eran radiactivas. Claramente la más activa era la de Cesio, seguida de la de Bario y de la de Cadmio. Todas las muestras tuvieron promedios superiores a la radiación ambiente, con varianzas que permitían admitir con certeza que eran radiactivas. Las varianzas pequeñas registradas en comparación con las medidas evidencia una vez más que la distribución de Poisson rige estos decaimientos radiactivos.\\
+
+\subsection{\label{sec:level2}Diferentes tipos de radiacion en Columbita}
+En este experimento medimos diferentes tipos de radiación al poner diferentes filtros a una roca de columbita. Para esto, medimos 3 conteos en intervalos de 100 segundos para la roca de frente y de revés. Luego tomamos las mismas medidas para el lado más radiactivo de la roca superponiendo filtros de papel y aluminio. Claramente no faltó la medición de la radiación ambiente.\\
+
+Los datos de radiación ambiente se encuentran consignados en la tabla \ref{table:ambiente5}. Mientras los datos de radiación con diferentes filtros de columbita se encuentran en la tabla \ref{table:columbita}.\\
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|}
+	\hline $Medicion $ & $ Conteo (\pm 1) $ \\ 
+	\hline\hline
+	1&42\\
+	2&32\\
+	3&34\\
+	4&36\\
+	5&41\\
+	Prom&37.0\\
+	Std&3.90\\
+	[1ex] 
+ \hline
+ \end{tabular} 
+  \caption{Radiación ambiental}
+\label{table:ambiente5} 
+\end{table}
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+	\hline $ Muestra $ & \multicolumn{3}{c|}{$Resultado\ (\pm 1)$ } & $\bar{x}$& $\sigma_x$ \\ 
+	\hline\hline
+	No Filtro 1 &326&349&318&331.0&13.14\\
+	Papel 1&329&355&344&342.67&10.67\\
+	Metal 1&146&187&160&164.33&17.02\\
+	No Filtro 2 &286&321&286&297.67&16.50\\
+	[1ex] 
+ \hline
+ \end{tabular} 
+  \caption{Distintos filtros para la Columbita}
+\label{table:columbita} 
+\end{table}
+
+De esta tabla es importatne notar que la radiación de ambiente es prácticamente insignificante respecto a las radiaciones obtenidas incluso con los filtros, y para los objetivos de esta sección no es importante tenerla en cuenta, ya que no realizaremos ningún cálculo, solo compararemos los promedios y varianzas.\\
+
+Así, es sencillo notar que la diferencia entre los conteos realizados cuando se tenía el lado más radiactivo de la columbita respecto a la misma situación con un filtro de papel, son prácticamente insignificantes dadas las varianzas. Esto nos permite afirmar con bastante certeza que la radiación emitida por la columbita no está compuesta de radiación $\alpha$ o su fracción es muy pequeña para ser medida por este experimento. \\
+
+Por otro lado, los conteos del filtro metálico son claramente menores que los conteos normales sin filtro. A su vez, estos son significativamente mayores que la radiación ambiente por varias desviaciones estándares. Esto nos permite afirmar que mucha de la radiación emitida por la columbita es radiación $\beta$, casi la mitad, mientras la otra mitad, al poder atravesar el filtro de metal, se compone de radiación $\gamma$. Si sustraemos la radiación ambiente de los conteos con los filtros y sin ellos podremmos dar un estimado de la proporción de radiación de tipo $\beta$ y $\gamma$ que emite la columbita.\\
+
+Así, la columbita produce en promedio un valor total de $294 \pm 13.14$ conteos cada 100 segundos, mientras que con el filtro de metal produce $127.33 \pm 17.02$. Omitiendo las varianzas y asumiendo que el filtro de metal para completamente la radiación $\beta$, la proporción de radiación $\beta$ y $\gamma$ es de respectivamente de $56.67 \pm 0.06\%$  y de $43.33 \pm 0.06\%$. Aquí los errores absolutos se calcularon con las respectivas propagaciones de error.\\
+
+La composición de radiación $\beta$ de la roca se puede verificar cualitativamente porque al voltearla el número de conteos disminuyó. En este caso, la misma roca actuaba como un filtro no perfecto no tan poderos como el de metal que usamos, pero que de todas maneras reducía la radiación $\beta$ recibida por el contador.\\
+
+\subsection{\label{sec:level2}Diferentes tipos de radiacion en manta incandescente}
+En este experimento el objetivo era el mismo que en la sección anterior, esta vez, para una manta incandescente. Para lograr dicho objetivo tomamos 5 conteos en 60 segundos cada uno teniendo como objetivo la manta, la manta con un filtro de papel y luego de plomo, y el ambiente. Los datos obtenidos se encuentran en la tabla \ref{table:incandescente}.\\
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+	\hline $ Medicion $ & $Manta$ & $Papel$ & $Metal$ & $Ambiente$ \\
+	\hline\hline
+	1&672&586&126&22\\
+	2&696&573&148&28\\
+	3&746&627&144&42\\
+	4&691&608&149&21\\
+	5&754&655&160&20\\
+	Prom&711.80&609.80&145.40&26.60\\
+	Var&32.30&29.19&11.06&8.19\\
+		[1ex] 
+ \hline
+ \end{tabular} 
+  \caption{Distintos filtros para la manta incandescente}
+\label{table:incandescente} 
+\end{table}
+
+De esta tabla es importante notar que no hay preocupaciones por las mediciones respecto al ambiente. En cada caso las medidas fueron claramente diferentes entre ellas y con el ambiente por varias desviaciones estándares. Dada esta diferencia clara entre los conteos con diferentes filtros y respecto al ambiente, podemos afirmar con gran certeza que la manta incandescente emite radiación compuesta por rayos $\alpha$, $\beta$ y $\gamma$.\\
+
+Sabiendo que los rayos $\alpha$ solo son parados por papel y metal, que los rayos $\beta$ solo son parados por metal, y que los rayos $\gamma$ son imparables por papel y metal, podemos obtener un valor para las fracciones de composición de la radiación de la manta. Sin embargo, para que estas fracciones no se vean alteradas por el ambiente, es necesario restar su contribución a cada medida.\\
+
+De esta manera tenemos que la manta provoca en 60 segundos um promedio de $685.2\pm32.3$ conteos, mientras que la misma medida con filtros de papel y metal son, en promedio, respectivamente $583.2\pm29.19$ y $118.8\pm11.06$. Con estos datos, y la información en el párrafo anterior podemos concluir que la radiación ionizante emitida por la manta incandescente se compone en un $14.89\pm0.05\%$ de rayos $\alpha$, en un $67.78\pm0.05\%$ de rayos $\beta$ y en un $17.34 \pm0.018\%$ de rayos $\gamma$.\\
+
+Aquí vemos que la manta incandescente emite todos los tipos de radiación, $\alpha$, $\beta$ y $\gamma$. Ahora, dado que la radiación $\beta$ y $\alpha$ no puede ser emitida en un mismo proceso atómico, los resultados de este experimento demuestran que la manta incandescente contiene materiales reactivos que emiten radiación por al menos 2 procesos atómicos.\\
+
+\subsection{\label{sec:level2}Dependencia de la intensida de radiación con la distancia}
+En este experimento pretendíamos medir la dependencia de la intensidad de radiación con la distancia de la fuente. Para ello, tomamos conteos de 60 segundos de una muestra de Ra-226 a distancias desde 2cm hasta 10cm equiespaciadas a 1cm. Los datos obtenidos se encuentran en la tabla \ref{table:distancia}.\\
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+	\hline $D(\pm0.1cm)$& $c_1(\pm1)$ & $c_2(\pm1)$ & $c_3(\pm1)$& $c_4(\pm1)$& $c_5(\pm1)$& $\bar{c}$ & $\sigma_c$\\
+	\hline\hline
+	2 & 539 & 530 & 536 & 553 & 554 & 542.4 & 9.5\\
+	3 & 278 & 283 & 294 & 281 & 269 & 281.0 & 8.0\\
+	4 & 173 & 183 & 184 & 166 & 190 & 179.2 & 8.5\\
+	5 & 123 & 139 & 134 & 112 & 129 & 127.4 & 9.4\\
+	6 & 99  & 104 & 100 & 77  & 105 & 96.8  & 10.1\\
+	7 & 93  & 76  & 78  & 82  & 65  & 78.8  & 9.1\\
+	8 & 68  & 70  & 72  & 66  & 77  & 70.6  & 3.8\\
+	9 & 67  & 55  & 48  & 67  & 65  & 60.4  & 7.6\\
+	10& 45  & 40  & 52  & 48  & 64  & 49.8  & 8.1\\
+	[1ex] 
+ \hline
+ \end{tabular} 
+  \caption{Dependencia de la radiación con la distancia}
+\label{table:distancia} 
+\end{table}
+
+Para poder analizar esta dependencia de una mejor manera se sacó una gráfica. Ahora, como normalmente sucede, la intensidad de una fuente depende inversamente del cuadrado de la distancia a la que está. Por esto, teniendo en cuenta que la intensidad es proporcional al número de conteos, se hizo un ajuste de la forma:\\
 
 \begin{equation}
-\frac{n_1}{n_2} = \frac{\sin{\theta_2}}{\sin{\theta_1}}= 1.462\pm0.08
+ 	C(d) = A + \frac{B}{d^2}
+\end{equation}
+Donde $A$ corresponde a la intensidad percibida e invariante del ambiente, y B corresponde a una constante de calibre  para la dependencia de la fuente de radio con la distancia.\\
+
+
+Dicho ajuste tuvo como resultado la siguiente ecuación. Y su gráfica puede ser apreciada en la figura \ref{fig:distancia}.\\
+
+\begin{equation}
+ 	C(d) = 40.606\pm 5.05 + \frac{2169.6\pm38.1}{d^{2.055\pm0.036}}
 \end{equation}
 
-De esta manera, puesto que $ n_2 = 1 $, encontramos que el índice de refracción del estireno es precisamente $1.4162\pm0.08$, donde el error absoluto fue calculado con propagación de error sobre la fórmula usada. \\
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.1\linewidth]{distancia.jpg}
+\caption{Relación de intensidad con la distancia a la fuente}
+\label{fig:distancia}
+\end{figure}
 
-El valor teórico está en 1.5916, lo cual demuestra un error absoluto del $11\%$, lo cual no está mal al considerar las distintas fuentes de error. Estas fuentes de error confluyen en la aguja del receptor, la cual es muy sensible y puede ser perturbada por factores ambientales electromagnéticos o por factores físicos como el movimiento de la mesa, el cual no era nada suave dada la fricción con los instrumentos. A veces, incluso, el receptor se apagaba debido a su batería baja. Esto fué corregido solo cuando fue muy evidente.\\
+Dicho ajuste verifica la relación cuadrática de la intensidad con la distancia a la fuente. Este valor es $2.055\pm0.036$ lo cual solo está alejado de la realidad un 2.75\%. Además, podemos verificar que $A$ es el valor asociado a la radiación de ambiente, la cual no está muy alejada de las otras mediciones tomadas para el mismo tiempo.\\
 
-
-\subsection{\label{sec:level2}Polarización}
-En este experimento no necesitabamos calcular ningún valor experimental, sino verificar que se cumplía la  relación de intensidad para el paso de luz a través de uno o dos polarizadores. Dicha relación puede ser recordada con las ecuaciones \ref{eq:polarizador} y \ref{eq:polarizador2}.\\
-
-En primera instancia se midió la relación de polarización sin polarizadores. Esto se pudo hacer dado que el emisor emitía luz polarizada, y el receptor estaba polarizado, es decir, solo detectaba la componente de la luz que llegaba que era paralela a su dirección de polarización. En este caso, se pudo cubrir un rango amplio con bastantes mediciones, lo cual está consignado en la tabla \ref{table:polarizador1}.\\
+Con esto concluimos que la intensidad de radiación decae inversamente con el cuadrado de la distancia a la fuente.\\
+ 
+\subsection{\label{sec:level2}Rango de la radiación alpha}
+En esta sección evaluamos el alcance de la radiación $\alpha$ emitida por una muestra de Ra-226. Para ello tomamos conteos durante 10 segundos variando la distancia sobre la muestra sin filtro, y la muestra con un filtro de papel. Los datos obtenidos se pueden apreciar en la tabla \ref{table:alcance}.\\
 
 \begin{table}[h!]
 \centering
-\begin{tabular}{|c|c|}
-	\hline $ \theta (\pm 1^o) $ & $ I(\pm 0.2\cdot 10^{-1}mA  $)  \\ 
-	\hline\hline
-	0  &  0.0\\
-	10 &  0.2\\
-	20 &  1.0\\ 
-	30 &  2.4\\ 
-	40 &  4.4\\ 
-	50 &  6.2\\ 
-	60 &  7.2\\ 
-	70 &  8.6\\ 
-	80 &  9.2\\ 
-	90 &  9.6\\ 
-	100 &  9.2\\ 
-	110 &  8.4\\ 
-	120 &  7.4\\ 
-	130 &  6.2\\ 
-	140 &  4.2\\ 
-	150 &  2.4\\ 
-	160 &  0.8\\ 
-	170 &  0.2\\ 
-	180 &  0.0\\ 
-	[1ex] 
+ \begin{tabular}{|c|c|c|c|c|} 
  \hline
- \end{tabular} 
-  \caption{Intensidad de polarización a diferentes ángulos.}
-\label{table:polarizador1} 
+ $Distancia(\pm0.1cm)$& $C_{filtro}(\pm1)$& $\delta_{filtro}$ & $C_{0}(\pm1)$ & $\delta_0$ \\ [0.5ex] 
+ \hline\hline
+ 1.50&12660&112.52&28660&169.29\\
+ 2.00&9462&97.27&21280&145.88\\
+ 2.50&7044&83.93&16630&128.96\\
+ 3.00&5299&72.79&13640&116.79\\
+ 3.50&4225&65.00&11030&105.02\\
+ 4.00&3406&58.36&9570&97.83\\
+ 4.50&2722&52.17&7124&84.40\\
+ 5.00&2394&48.93&5740&75.76\\
+ 5.50&2106&45.89&4985&70.60\\
+ 6.00&1765&42.01&4230&65.04\\
+ 6.50&1558&39.47&3706&60.88\\
+ 7.00&1361&36.89&3163&56.24\\
+ 7.50&1159&34.04&2755&52.49\\
+ 8.00&1046&32.34&2500&50.00\\
+ 8.50&940&30.66&2258&47.52\\
+ 9.00&825&28.72&1989&44.60\\
+ 9.50&795&28.20&1841&42.91\\
+ 10.00&710&26.65&1652&40.64\\
+ 11.00&595&24.39&1369&37.00\\
+ 12.00&553&23.52&1098&33.14\\
+ 13.00&461&21.47&967&31.10\\
+ 14.00&334&18.28&818&28.60\\
+ 15.00&299&17.29&680&26.08\\
+ 16.00&288&16.97&582&24.12\\
+ 17.00&217&14.73&494&22.23\\
+ 18.00&205&14.32&417&20.42\\
+ 20.00&144&12.00&320&17.89\\
+ 25.00&97&9.85&189&13.75\\
+ [1ex] 
+ \hline
+ \end{tabular}
+ \caption{Mediciones de Ra-226 con y sin filtro de papel}
+ \label{table:alcance}
 \end{table}
 
-Dado que no debemos cuantificar nada, lo único que resta hacer es una gráfica de los puntos comparada con la gráfica teórica de la relación de la ecuación \ref{eq:polarizador}. Cabe resaltar que la escala angular estaba desfasada un valor de $90^o$ y los datos se tomaron con esta escala. En otras palabras, en $0^o$, el receptor y el emisor tenían polarizaciones perpendiculares. Para graficar los datos con la relación es necesario tener en cuenta este desfase. Esta gráfica se puede apreciar en la figura \ref{fig:polarizador1}. \\
+Cabe resaltar que la fuente tomada era sumamente radiactiva y para distancias muy cortas el contador se saturaba, por lo que se tomó la medida para 1 segundo y se multiplicó por 10. Además, dado que no se tomaron muchas medidas se tomó como error absoluto la raiz cuadrada de las medidas, lo cual es una buena aproximación teniendo en cuenta la distribución de Poisson que caracteriza los decaimientos.\\
 
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.8\linewidth]{polarizador1}
-\caption{Intensidad contra ángulo de polarización}
-\label{fig:polarizador1}
-\end{figure}
-
-En esta figura se puede apreciar la gran correlación de la relación de interferencia con los datos obtenidos. Eso se lo podemos atribuir a la simplicidad del montaje, que no contaba con otros elementos que provocaran fuentes de error además de los necesarios emisor y receptor.\\
-
-En segunda instancia, medimos esta misma curva de intensidad contra ángulo de polarización preparando el emisor y receptor en direcciones de polarización paralela, esta vez, superponiendo un polarizador metálico en el medio al cual se variaba su dirección de polarización. En este caso, dada la polarización intrínseca del emisor y el receptor, esto equivale a un montaje con dos polarizadores, por lo que la ecuación que aplica aquí es la \ref{eq:polarizador2}. Debido a que tenemos al emisor y al receptor preparados en ángulos paralelos, para aplicar la ecuación, tendremos la condición $\theta_2 = 0$. Dicha ecuación tendrá entonces una dependencia de $\cos^4{(\theta_1)}$. Cabe resaltar que esta vez se cambió el ángulo del polarizador de metal manualmente sin tener una escala angular de referencia, por lo que los errores de ángulo pueden ser bastante grandes. Los datos obtenidos en este experimento se encuentran entonces en la tabla \ref{table:polarizador2} y la gráfica de los datos y su respectiva relación funcional se encuentran expuestas en la gráfica \ref{fig:polarizador2}. \\
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{|c|c|}
-	\hline $ \theta (\pm 5^o) $ & $ I(\pm 0.2\cdot 10^{-1}mA  $)  \\ 
-	\hline\hline
-	0  &  7.8\\
-	22.5 &  6.0\\ 
-	45 &  2.2\\ 
-	67.5 &  0.4\\ 
-	90 &  0.0\\ 
-	[1ex] 
- \hline
- \end{tabular} 
-  \caption{Intensidad de polarización a diferentes ángulos.\\ Emisor-Receptor en orientación paralela}
-\label{table:polarizador2} 
-\end{table}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.8\linewidth]{polarizador2}
-\caption{Intensidad contra ángulo de polarización \\ Emisor-Receptor en orientación paralela}
-\label{fig:polarizador2}
-\end{figure}
-
-En esta gráfica se puede apreciar otra vez la buena dependencia predicha por la respectiva relación de intensidad dada por la respectiva ecucación. La curva entra en general en el rango dado por los errores, sin embargo, es preciso decir que dichos errores están siendo de todas maneras subestimados, especialmente el del la medición de intensidad, la cual variaba mucho con perturbaciones físicas de la mesa o ambientales electromagnéticas.\\
-
-En última instancia, para el experimento de polarización, preparamos el emisor y el receptor en estados con dirección de polarización perpendicular. De la misma manera superpusimos un polarizador metálico al que variábamos su ángulo de polarización. En este caso, la ecuación que gobierna la curva de intensidad contra el ángulo de orientación de polaridad, es la misma ecuación \ref{eq:polarizador2}. Sin embargo, dada la perpendicularidad de las direcciones del emisor y el receptor, la condición aca es $\theta_2 = 90^o$. Así, la relación mencionada queda proporcional a $\left(\sin{(\theta_1)}\cos{(\theta_2)}\right)^2$. Los datos obtenidos se encuentran en la tabla \ref{table:polarizador3}.\\
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{|c|c|}
-	\hline $ \theta (\pm 5^o) $ & $ I(\pm 0.2\cdot 10^{-1}mA  $)  \\ 
-	\hline\hline
-	0  &  0.0\\
-	45 &  2.4\\ 
-	90 &  0.0\\ 
-	[1ex] 
- \hline
- \end{tabular} 
-  \caption{Intensidad de polarización a diferentes ángulos.\\ Emisor-Receptor en orientación perpendicular}
-\label{table:polarizador3} 7.
-\end{table}
-
-En este caso se tomaron únicamente 3 datos que verifican de una buena manera la relación intensidad contra los ángulos de polarización. En este caso podemos ver que cuando pusimos el polarizador metálico a $0^o$ y a $90^o$ no se detectó señal en el emisor. Esto se debe a que en un caso $\sin{(\theta_1) }= 0$ y en el otro caso $\cos{(\theta_1)} = 0$. Esto confirma indirectamente la ecuación \ref{eq:polarizador2}. En el caso de $45^o$, ninguno de los elementos se cancela, por lo cual obtuvimos un resultado no nulo que también confirma la ya mencionada ecuación.\\
-
-\subsection{\label{sec:level2}Interferencia a Doble Rendija}
-En este experimento cuantificamos el patrón de interferencia del experimento de doble rendija variando dos veces la distancia entre las rendijas. En primera instancia usamos una distancia de separación $d_1= 10.5cm$ para lo cual obtuvimos un buen patrón de interferencia. En segunda instancia, separamos las rejillas una distancia $d_2 = 7.4cm$, y debido a la relación en la ecuación \ref{eq:interferencia}, los mínimos de interferencia estaban más separados por lo que el patrón se veía más difuso.  Los datos obtenidos se encuentran en la tabla \ref{table:inter}.\\
-
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{|c|c|c|}
-	\hline $ \theta (\pm 3^o) $ & $ I_1(\pm 0.2\cdot 10^{-1}mA  $) &$ I_2(\pm 0.2\cdot 10^{-1}mA)  $  \\ 
-	\hline\hline
-	0  &  10.0 & 10.0\\
-	5  &  4.4 & 4.0\\
-	10 &  0.1 & 0.8\\
-	15 &  2.0 & 0.2\\
-	20 &  3.0 & 1.0\\ 
-	25 &  2.0 & 1.2\\ 
-	30 &  0.2 & 0.2\\ 
-	35 &  1.0 & 0.0\\ 
-	40 &  0.4 & 0.0\\ 
-	45 &  0.2 & 0.2\\ 
-	50 &  0.4 & 0.4\\ 
-	55 &  0.2 & 0.2\\ 
-	60 &  0.2 & 0.0\\ 
-	65 &  0.0 & 0.0\\ 
-	70 &  0.0 & 0.0\\ 
-	75 &  0.2 & 0.0\\ 
-	80 &  0.0 & 0.0\\ 
-	85 &  0.0 & 0.0\\ 
-	[1ex] 
- \hline
- \end{tabular} 
-  \caption{Patrón de interferencia para $d_1$ y $d_2$}
-\label{table:inter} 
-\end{table}
-
-En este caso se escogieron $3^o$ como error absoluto en la medida del ángulo, porque experimentalmente, en este rango, el receptor arrojaba señales muy similares.\\
-
-Una buena manera de proceder en este análisis de datos sería hacer un ajuste funcional de los datos teniendo en cuenta que estos deberían cumplir la ecuación de difracción de Fraunhofer superpuesta con la ecuación de intensidad para doble rendija, y luego mirar los mínimos de acuerdo al ajuste. Sin embargo, este ajuste no logró ser realizado con precisión. Una de las razones la falla del ajuste es que la ecuación para intensidad en términos del ángulo tiene una dependencia funcional de $\frac{\sin{(\alpha \theta)}}{\alpha\theta}$ lo cual tiene complicaciones numéricas alrededor de $\theta= 0$. Otra de las razones para la falla del ajuste, es que para poder aplicar la relación de interferencia, se necesita que los caminos de las ondas sean muy similares para que la diferencia de intensidades en el punto de interferencia sea despreciable. Esto se cumple cuando se mira el patrón de interferencia a una distancia $D$ mucho mayor que la separación de las rendijas $d$, lo cual no se cumplía para nuestro experimento. Por esto, se procedió a encontrar los mínimos del patrón de interferencia manualmente para mirar cómo cumplen la relación de interferencia dada por la ecuación \ref{eq:interferencia}.\\
-
-Los datos pueden ser apreciados de manera más gráfica en las figuras \ref{fig:inter1} y \ref{fig:inter2}.\\
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=1\linewidth]{inter1}
-\caption{Patrón de interferencia para $d_1 = 10.5cm$}
-\label{fig:inter1}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=1\linewidth]{inter2}
-\caption{Patrón de interferencia para $d_2 = 7.4cm$}
-\label{fig:inter2}
-\end{figure}
-
-De aquí se pueden deducir manualmente los primeros  tres mínimos de cada partrón, los cuales están dados por la tabla \ref{table:minimos}. Para los mínimos de orden mayor, el patrón de interferencia se vuelve muy ténue, y a falta de un ajuste, los mínimos ya no pueden ser determinados manualmente.\\
-
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{|c|c|c|}
-	\hline $n $ & $ \theta_1 (\pm 3^o) $ & $ \theta_2 (\pm 3^o) $ \\ 
-	\hline\hline
-	1 & 10 & 15 \\
-	2 & 30 & 35 \\
-	3 & 45 & 60 \\
-	[1ex] 
- \hline
- \end{tabular} 
-  \caption{Mínimos de interferencia para $d_1$ y $d_2$}
-\label{table:minimos} 
-\end{table}
-
-Si se toma el $\sin{\theta}$ para cada mínimo y se grafican los valores de la tabla anterior, se puede apreciar la relación lineal dada por la ecuación \ref{eq:interferencia}. Esta gráfica puede ser ajustada linealmente con la rutina de optimización de Scipy, en Python. Los respectivos ajustes pueden ser apreciados en  la gráfica \ref{fig:inter3}.\\
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.8\linewidth]{inter3}
-\caption{Relación de interferencia para $d_1$ y $d_2$}
-\label{fig:inter3}
-\end{figure}
-
-De este ajuste lineal es importante notar que los valores de corte con el eje y son muy pequeños, como es esperado de una relación lineal como la ecuación \ref{eq:interferencia}. Además de esto, se puede obtener un estimado del error en la pendiente, dado por el ajuste. En este sentido, el valor de pendiente  en cada caso está dado por $m_1 = 0.2667 \pm 0.034$ y $m_2 = 0.300 \pm 0.006$. \\
-
-Finalmente, para sacar el estimado de longitud de onda en cada caso solo es necesario multiplicar por las respectivas distancias $d_1$ y $d_2$. En este caso, teniendo en cuenta que el error asociado a cada medida de distancia es de $0.1cm$, haciendo la respectiva propagación de error, obtenemos las longitudes de onda dadas por $\lambda_1 = 2.79 \pm 0.36cm$ y $\lambda_2 = 2.22 \pm 0.05cm$.\\
-
-De estos valores, es importante notar que respecto al valor teórico de $\lambda$, el primero cae en el rango de error y el segundo no. Esto se debe a la difusión del segundo patrón antes mencionado y al error humano introducido por la determinación manual de los mínimos de interferencia, lo cual era más dificil de determinar en dicho patrón. Por otra parte, los errores relativos al valor teórico están dado por $2.1\%$ y $22.1\%$ respectivamente.\\
-
-\subsection{\label{sec:level2}Ondas estacionarias}
-En este experimento tomamos el valor de longitud de onda de las microondas generadas por el emisor midiendo la distancia de separación de un número determinado de máximos de señal de onda estacionaria usando el mismo receptor como reflector parcial. Replicamos este experimento variando el número de máximos medidos, y los resultados, con sus respectivos errores, se encuentran en la tabla \ref{table:estacionaria}.\\
+Ahora, para verificar el alcance de la radiación $\alpha$, tenemos que obtener en qué fracción se reduce la radiación total al imponer el filtro a diferentes distancias. Cuando la fracción reducida sea significativamente pequeña, podemos decir que la radiación $\alpha$ llegó a su límite de distancia recorrida. En la tabla \ref{table:fraccion} se pueden apreciar las diferencias de radiación para cada distancia, así como la fracción que esta diferencia representa respecto a la radiación sin filtro. Los errores expuestos fueron calculados con la respectiva propagación de error tomando los errores de Poisson ya mencionados.\\ 
 
 \begin{table}[h!]
 \centering
  \begin{tabular}{|c|c|c|c|} 
  \hline
- $N Maximos$& $x_0(cm) \pm 0.1cm$ & $x_f(cm) \pm 0.1cm$ & $\lambda_{exp} (cm)$ \\ [0.5ex] 
+ $Distancia(\pm0.1cm)$& $\Delta C$& $Fraccion\ Reducida$ & $\delta_{frac}$ \\ [0.5ex] 
  \hline\hline
- 20 & 56 & 27.1 & 2.890 $\pm$ 0.01\\
- 30 & 56 & 9.9 & 3.073 $\pm$ 0.006\\
-[1ex] 
+1.50&16000&0.558&0.005\\
+2.00&11818&0.555&0.005\\
+2.50&9586&0.576&0.006\\
+3.00&8341&0.612&0.006\\
+3.50&6805&0.617&0.007\\
+4.00&6164&0.644&0.007\\
+4.50&4402&0.618&0.009\\
+5.00&3346&0.583&0.010\\
+5.50&2879&0.578&0.011\\
+6.00&2465&0.583&0.012\\
+6.50&2148&0.580&0.013\\
+7.00&1802&0.570&0.014\\
+7.50&1596&0.579&0.015\\
+8.00&1454&0.582&0.015\\
+8.50&1318&0.584&0.016\\
+9.00&1164&0.585&0.017\\
+9.50&1046&0.568&0.018\\
+10.00&942&0.570&0.019\\
+11.00&774&0.565&0.021\\
+12.00&545&0.496&0.026\\
+13.00&506&0.523&0.027\\
+14.00&484&0.592&0.027\\
+15.00&381&0.560&0.031\\
+16.00&294&0.505&0.036\\
+17.00&277&0.561&0.036\\
+18.00&212&0.508&0.042\\
+20.00&176&0.550&0.045\\
+25.00&92&0.487&0.064\\
+ [1ex] 
  \hline
  \end{tabular}
- \caption{Máximos de ondas estacionarias}
- \label{table:estacionaria}
+ \caption{Fracciones de reducción de radiación por el filtro}
+ \label{table:fraccion}
 \end{table}
 
-Aquí, dado que la relación es lineal, y al igual que el experimento de Fabry-Perot y de Michelson, está dada por la ecuación \ref{eq:Michelson}, los errores tomados para los valores de la longitud de onda $\lambda$ fueron tomados con esta misma ecuación teniendo en cuenta únicamente el error aportado por el límite de resolución de la regla utilizada.\\
-
-Los errores absolutos asociados a la medición son muy  pequeños, pero esto se debe a que no pudimos cuantificar la fuente más importante de error en este experimento, la cual provenía del receptor. En este caso determinar un máximo o un mínimo en la escala de intensidad analógica del receptor era muy difícil dado que este instrumento era muy sensible y tenía muchas fluctuaciones. Estas fluctuaciones se pueden deber a la contaminación electromagnética ambiental, o que a veces, nuestros mismos cuerpos podían actuar como reflectores y afectar la medición. Además, la mesa no era tan lisa para poder mover el espejo conductor de una manera suave que no perturbara la aguja de la medida.\\
-
-El valor teórico de la longitud de onda emitida por estos instrumentos está dado por $\lambda_{teo} = 2.857 cm$, por lo que podemos deducir que el error relativo a la medida de $\lambda$ en cada caso, está dado por $0.5\%$ y $7.7\%$. De estos resultados es interesante notar que la medida que debía dar menor error relativo (la de 30 máximos) debido al poco error absoluto, dio mayor error. Esto se debe principalmente a que a medida que se alejaba el receptor, la onda tenía que viajar más y perdía intensidad, por lo que los máximos y mínimos se hacían cada vez más difíciles de distinguir. En un punto alejado donde la señal de los instrumentos es baja, las fuentes de error anteriormente mencionadas se tornan más influyentes.\\
-
-\subsection{\label{sec:level3}Espejo de Lloyd}
-En este experimento medimos indirectamente la longitud de onda de las microondas al medir directamente la distancia entre distintos máximos de interferencia en el montaje del espejo de Lloyd. En este caso, hicimos dos réplicas del experimento, cuyas especificaciones se encuentran en la tabla \ref{table:Lloyd}.\\
-
-\begin{table}[h!]
-\centering
- \begin{tabular}{|c|c|c|c|} 
- \hline
- $N Maximos$& $x_0(cm) \pm 0.1cm$ & $x_f(cm) \pm 0.1cm$ & $\lambda_{exp} (cm)$ \\ [0.5ex] 
- \hline\hline
- 10 & 10 & 41.5 & 2.78 $\pm$ 0.02\\
- 8 & 11.2 & 39.1 & 2.64 $\pm$ 0.02\\
-[1ex] 
- \hline
- \end{tabular}
- \caption{Máximos en el espejo de Lloyd}
- \label{table:Lloyd}
-\end{table}
-
-Para cada caso se tomaron dos valores de distancia de separación perpendicular y se tomó su diferencia. Esto es equivalente a usar dos veces la ecuación \ref{eq:Lloyd} para distintos valores de $d$ y dejarla en términos de la diferencia de dos enteros, es decir, otro entero que representa el número de máximos entre las dos posiciones. Los errores puestos en la tabla fueron estimados con propagación de error y son del mismo orden de magnitud, dado que no se cambió mucho la réplica.\\
-
-Si comparamos con el valor teórico, podemos obtener los errores relativos. Estos son del $2,6\%$ y del 
-$7.5\%$. En este caso, el experimento tiene las mismas fuentes de error que el experimento de las ondas estacionarias, y además, añadimos, o más bien le damos mayor importancia a la disminución de la amplitud reflejada en el espejo que hace que no pueda ser bien comparada con la que va directamente hacia el receptor. Esto modifica un poco la relación para la interferencia destructiva y provoca error. Además debemos decir que debido a que la relación de interferencia era no lineal, a medida que alejabamos el espejo, la distancia entre los máximos se reducía cada vez más, y esto, junto a la disminución de la amplitud, dificultaba en gran medida la determinación y el conteo de dichos máximos. A pesar de todo, para este montaje complicado, los errores no fueron exagerados.\\
+En esta tabla se puede apreciar que la fracción de radiación $\alpha$ parada por el filtro de papel no varió significativamente en las distancias medidas. A pesar de esto si se pudo notar una disminución generalizada pero no significativa de dicha fracción. Esto nos lleva a concluir que debido al poder de la fuente, sus rayos $\alpha$ tienen un gran alcance que va más allá de 25cm.\\
 
 \subsection{\label{sec:level2}Interferómetro de Fabry-Perot}
 El experimento de Fabry-Perot es muy similar al de las ondas estacionarias, sin embargo, esta vez usamos reflectores parciales en vez del propio receptor como espejo. En este caso, la relación de interferencia es igual a la de ondas estacionarias y a la del interferómetro de Michelson. Se procedió de la misma manera en que se procedió en los experimentos de determinación de longitud de onda pasados. Los datos obtenidos se encuentran consignados en la tabla \ref{table:Fabry}.\\
