@@ -545,7 +545,7 @@ De esta manera tenemos que la manta provoca en 60 segundos um promedio de $685.2
 Aquí vemos que la manta incandescente emite todos los tipos de radiación, $\alpha$, $\beta$ y $\gamma$. Ahora, dado que la radiación $\beta$ y $\alpha$ no puede ser emitida en un mismo proceso atómico, los resultados de este experimento demuestran que la manta incandescente contiene materiales reactivos que emiten radiación por al menos 2 procesos atómicos.\\
 
 \subsection{\label{sec:level2}Dependencia de la intensida de radiación con la distancia}
-En este experimento pretendíamos medir la dependencia de la intensidad de radiación con la distancia de la fuente. Para ello, tomamos conteos de 60 segundos de una muestra de Ra-226 a distancias desde 2cm hasta 10cm equiespaciadas a 1cm. Los datos obtenidos se encuentran en la tabla \ref{table:distancia}.\\
+En este experimento pretendíamos medir la dependencia de la intensidad de radiación con la distancia de la fuente. Para ello, tomamos conteos de 10 segundos de una muestra de Ra-226 a distancias desde 2cm hasta 10cm equiespaciadas a 1cm. Además, se duplicó el experimento con medidas de 10 segundos una muestra del mismo elemento, esta vez, mucho más radiactiva. Los datos obtenidos se encuentran en la tabla \ref{table:distancia} y \ref{table:fuerte}.\\
 
 
 \begin{table}[h!]
@@ -565,34 +565,60 @@ En este experimento pretendíamos medir la dependencia de la intensidad de radia
 	[1ex] 
  \hline
  \end{tabular} 
-  \caption{Dependencia de la radiación con la distancia}
+  \caption{Dependencia de la radiación con la distancia (Ra-226 débil)}
 \label{table:distancia} 
 \end{table}
 
-Para poder analizar esta dependencia de una mejor manera se sacó una gráfica. Ahora, como normalmente sucede, la intensidad de una fuente depende inversamente del cuadrado de la distancia a la que está. Por esto, teniendo en cuenta que la intensidad es proporcional al número de conteos, se hizo un ajuste de la forma:\\
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|}
+	\hline $D(\pm0.1cm)$& $c(\pm1)$& $\sigma_c$\\
+	\hline\hline
+	4.00&8558&92.51\\
+	5.00&5281&72.67\\
+	6.00&3899&62.44\\
+	7.00&3089&55.58\\
+	8.00&2376&48.74\\
+	9.00&1993&44.64\\
+	10.00&1563&39.53\\
+	11.00&1303&36.10\\
+	12.00&1074&32.77\\
+	[1ex] 
+	\hline
+ \end{tabular} 
+  \caption{Dependencia de la radiación con la distancia (Ra-226 fuerte)}
+\label{table:distancia} 
+\end{table}
+
+Debido al poder de la segunda fuente utilizada, no necesitamos un fuerte respaldo estadístico, ya que según la distribución de Poisson, el error relativo disminuye con el inverso de la raiz del promedio (en este caso la medida). Así, solo tomamos una medida de 10 segundos y tomamos la raiz cuadrada de dicho valor como error. Cabe resaltar que para $d= 2cm$ y $d = 3cm$ en la muestra fuertemente radiactiva, el contador se saturaba, por lo que no tomamos estos conteos.\\
+
+Para poder analizar la dependencia de la intensidad con la distancia de una mejor manera, se obtuvieron gráficas para cada muestra. Ahora, como normalmente sucede, la intensidad de una fuente depende inversamente del cuadrado de la distancia a la que está el detector. Por esto, teniendo en cuenta que la intensidad es proporcional al número de conteos, se hizo un ajuste de la forma:\\
 
 \begin{equation}
  	C(d) = A + \frac{B}{d^2}
 \end{equation}
-Donde $A$ corresponde a la intensidad percibida e invariante del ambiente, y B corresponde a una constante de calibre  para la dependencia de la fuente de radio con la distancia.\\
 
+Donde $A$ corresponde a la intensidad percibida e invariante del ambiente, y B corresponde a una constante de calibre  para la dependencia de la fuente de radio con la distancia. En el caso del Ra-226 fuerte el efecto del ambiente es sumamente insignificante, por lo cual se tomó $A = 0$.\\
 
-Dicho ajuste tuvo como resultado la siguiente ecuación. Y su gráfica puede ser apreciada en la figura \ref{fig:distancia}.\\
-
-\begin{equation}
- 	C(d) = 40.606\pm 5.05 + \frac{2169.6\pm38.1}{d^{2.055\pm0.036}}
-\end{equation}
+Los resultados de los ajustes, así como sus respectivas gráficas se encuentran en las figuras \ref{fig:distancia} y \ref{fig:cuadrados}.\\
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=1.1\linewidth]{distancia.jpg}
-\caption{Relación de intensidad con la distancia a la fuente}
+\caption{Relación de intensidad con la distancia a la fuente (Ra-226 débil)}
 \label{fig:distancia}
 \end{figure}
 
-Dicho ajuste verifica la relación cuadrática de la intensidad con la distancia a la fuente. Este valor es $2.055\pm0.036$ lo cual solo está alejado de la realidad un 2.75\%. Además, podemos verificar que $A$ es el valor asociado a la radiación de ambiente, la cual no está muy alejada de las otras mediciones tomadas para el mismo tiempo.\\
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.1\linewidth]{cuadrados.jpg}
+\caption{Relación de intensidad con la distancia a la fuente (Ra-226 fuerte)}
+\label{fig:cuadrados}
+\end{figure}
 
-Con esto concluimos que la intensidad de radiación decae inversamente con el cuadrado de la distancia a la fuente.\\
+Dicho ajuste verifica la relación cuadrática de la intensidad con la distancia a la fuente. El valor del exponente es de $2.055\pm0.036$  para la fuente débil y de $1.969\pm0.011$ lo cual solo está alejado de la realidad un 2.75\% y un 1.5\%. La diferencias de errores se debe a la propagación de los errores relativos, los cuales son menores para conteos muy grandes.\\
+
+Con esto concluimos que la intensidad de radiación decae inversamente con el cuadrado de la distancia a la fuente, independientemente de la fuente utilizada.\\
  
 \subsection{\label{sec:level2}Rango de la radiación alpha}
 En esta sección evaluamos el alcance de la radiación $\alpha$ emitida por una muestra de Ra-226. Para ello tomamos conteos durante 10 segundos variando la distancia sobre la muestra sin filtro, y la muestra con un filtro de papel. Los datos obtenidos se pueden apreciar en la tabla \ref{table:alcance}.\\
@@ -603,9 +629,6 @@ En esta sección evaluamos el alcance de la radiación $\alpha$ emitida por una 
  \hline
  $Distancia(\pm0.1cm)$& $C_{filtro}(\pm1)$& $\delta_{filtro}$ & $C_{0}(\pm1)$ & $\delta_0$ \\ [0.5ex] 
  \hline\hline
- 1.50&12660&112.52&28660&169.29\\
- 2.00&9462&97.27&21280&145.88\\
- 2.50&7044&83.93&16630&128.96\\
  3.00&5299&72.79&13640&116.79\\
  3.50&4225&65.00&11030&105.02\\
  4.00&3406&58.36&9570&97.83\\
@@ -638,9 +661,9 @@ En esta sección evaluamos el alcance de la radiación $\alpha$ emitida por una 
  \label{table:alcance}
 \end{table}
 
-Cabe resaltar que la fuente tomada era sumamente radiactiva y para distancias muy cortas el contador se saturaba, por lo que se tomó la medida para 1 segundo y se multiplicó por 10. Además, dado que no se tomaron muchas medidas se tomó como error absoluto la raiz cuadrada de las medidas, lo cual es una buena aproximación teniendo en cuenta la distribución de Poisson que caracteriza los decaimientos.\\
+Cabe resaltar que la fuente tomada era sumamente radiactiva y para distancias muy cortas el contador se saturaba, por lo se omitieron dichas medidas. Además, dado que no se tomaron muchas medidas se tomó como error absoluto la raiz cuadrada de las medidas, lo cual es una buena aproximación teniendo en cuenta la distribución de Poisson que caracteriza los decaimientos.\\
 
-Ahora, para verificar el alcance de la radiación $\alpha$, tenemos que obtener en qué fracción se reduce la radiación total al imponer el filtro a diferentes distancias. Cuando la fracción reducida sea significativamente pequeña, podemos decir que la radiación $\alpha$ llegó a su límite de distancia recorrida. En la tabla \ref{table:fraccion} se pueden apreciar las diferencias de radiación para cada distancia, así como la fracción que esta diferencia representa respecto a la radiación sin filtro. Los errores expuestos fueron calculados con la respectiva propagación de error tomando los errores de Poisson ya mencionados.\\ 
+Ahora, para verificar el alcance de la radiación $\alpha$, tenemos que obtener en qué fracción se reduce la radiación total al imponer el filtro a diferentes distancias. Dicha fracción corresponde a la fracción  de rayos $\alpha$ en la radiación total. Cuando la fracción reducida sea significativamente pequeña, podemos decir que la radiación $\alpha$ llegó a su límite de distancia recorrida. En la tabla \ref{table:fraccion} se pueden apreciar las diferencias de radiación para cada distancia, así como la fracción que esta diferencia representa respecto a la radiación sin filtro. Los errores expuestos fueron calculados con la respectiva propagación de error tomando los errores de Poisson ya mencionados.\\ 
 
 \begin{table}[h!]
 \centering
@@ -648,9 +671,6 @@ Ahora, para verificar el alcance de la radiación $\alpha$, tenemos que obtener 
  \hline
  $Distancia(\pm0.1cm)$& $\Delta C$& $Fraccion\ Reducida$ & $\delta_{frac}$ \\ [0.5ex] 
  \hline\hline
-1.50&16000&0.558&0.005\\
-2.00&11818&0.555&0.005\\
-2.50&9586&0.576&0.006\\
 3.00&8341&0.612&0.006\\
 3.50&6805&0.617&0.007\\
 4.00&6164&0.644&0.007\\
@@ -683,27 +703,99 @@ Ahora, para verificar el alcance de la radiación $\alpha$, tenemos que obtener 
  \label{table:fraccion}
 \end{table}
 
-En esta tabla se puede apreciar que la fracción de radiación $\alpha$ parada por el filtro de papel no varió significativamente en las distancias medidas. A pesar de esto si se pudo notar una disminución generalizada pero no significativa de dicha fracción. Esto nos lleva a concluir que debido al poder de la fuente, sus rayos $\alpha$ tienen un gran alcance que va más allá de 25cm.\\
+En esta tabla se puede apreciar que la fracción de radiación $\alpha$ parada por el filtro de papel no varió significativamente en las distancias medidas. A pesar de esto si se pudo notar una disminución generalizada de esta radiación alrededor de los 5cm. Después de dicha distancia la fracción no varió generalizadamente. \\
 
-\subsection{\label{sec:level2}Interferómetro de Fabry-Perot}
-El experimento de Fabry-Perot es muy similar al de las ondas estacionarias, sin embargo, esta vez usamos reflectores parciales en vez del propio receptor como espejo. En este caso, la relación de interferencia es igual a la de ondas estacionarias y a la del interferómetro de Michelson. Se procedió de la misma manera en que se procedió en los experimentos de determinación de longitud de onda pasados. Los datos obtenidos se encuentran consignados en la tabla \ref{table:Fabry}.\\
+Ahora, debido a la interacción del aire con la radiación $\alpha$, esta no tiene mucho alcance dependiendo de su energía. Para el aire a presión constante y a $15^pC$, este alcance está dado por $D= 0.4769 E^{1.5}\frac{cm}{Mev}$. Si tenemos en cuenta la caida en la fracción de radiación $\alpha$, podemos encontrar que la muestra emitía dichos rayos con energías alrededor de $4.80 MeV$. Con un poco de investigación podemos intuir que dicha energía corresponde a la transición $Ra-226 \rightarrow Ra-222$, la cual es de $4.871Mev$. Si esta es, en efecto, la transición correcta, este método de cálculo de energía provoca únicamente un $2\%$ de error, congruente con los errores obtenidos anteriormente con estos montajes.\\
+
+\subsection{\label{sec:level2}Influencia del grosor de los materiales en la radiación $\beta$}
+En este experimiento medimos la influencia del grosor de materiales como el cartón, perspex y aluminio sobre la radiación $\beta$ de una fuente de Ra-226. Para ello tomamos diferentes medidas de conteo durante 10 segundos con la muestra a 3 cm del detector. Los datos obtenidos se encuentran en las tablas \ref{table:carton}, \ref{table:perspex} y \ref{table:aluminio}.\\
 
 \begin{table}[h!]
 \centering
- \begin{tabular}{|c|c|c|c|} 
+ \begin{tabular}{|c|c|c|c|c|c|} 
  \hline
- $N Maximos$& $x_0(cm) \pm 0.1cm$ & $x_f(cm) \pm 0.1cm$ & $\lambda_{exp} (cm)$ \\ [0.5ex] 
+ $Grosor(\pm0.1cm)$ & $c_1(\pm1)$ & $c_2(\pm1)$ & $c_3(\pm1)$ & $\bar{c}$ & $\sigma_c$ \\ [0.5ex] 
  \hline\hline
- 10 & 55.3 & 41.0 & 2.86 $\pm$ 0.005\\
- 10 & 39.5 & 25.5 & 2.82 $\pm$ 0.005\\
+ 0.0&9936&9824&9849&9869.67&48.00\\
+ 0.5&1467&1428&1482&1459.00&22.76\\
+ 1.0&697&664&739&700.00&30.69\\
+ 1.5&363&364&324&350.33&18.62\\
+ 2.0&211&199&219&209.67&8.22\\
+ 2.5&162&165&143&156.67&9.74\\
 [1ex] 
  \hline
  \end{tabular}
- \caption{Máximos en el interferómetro de Fabry-Perot}
- \label{table:Fabry}
+ \caption{Filtros de aluminio de diferente grosor}
+ \label{table:aluminio}
 \end{table}
 
-Debido a que la relación aquí es lineal, aplicamos esta relación a los errores también, y obtuvimos de igual manera errores muy pequeños debido a que no era posible cuantificar las otras fuentes de error. El error relativo de estas medidas con respecto al valor experimental están dados por $0.1\%$ y $1.2\%$. Estas medidas de error son muy pequeñas debido a la sencillez del montaje y a la relación lineal que lo gobierna. En este caso, la señal recibida era muy clara y a pesar de las fluctuaciones de la aguja por diferentes factores, se pudo determinar con gran precisión los máximos y mínimos de interferencia. El uso de reflectores parciales planos en vez de la trompa del receptor como espejos disminuyó en gran medida el error. \\
+\begin{table}[h!]
+\centering
+ \begin{tabular}{|c|c|c|c|c|c|} 
+ \hline
+ $Grosor(\pm0.1cm)$ & $c_1(\pm1)$ & $c_2(\pm1)$ & $c_3(\pm1)$ & $\bar{c}$ & $\sigma_c$ \\ [0.5ex] 
+ \hline\hline
+ 0.0&9193&9194&9081&9156.00&53.03\\
+ 1.4&1468&1462&1541&1490.33&35.91\\
+ 2.8&608&652&583&614.33&28.52\\
+ 4.2&358&350&398&368.67&21.00\\
+ 5.6&271&222&230&241.00&21.46\\
+[1ex] 
+ \hline
+ \end{tabular}
+ \caption{Filtros de perspex de diferente grosor}
+ \label{table:perspex}
+\end{table}
+
+\begin{table}[h!]
+\centering
+ \begin{tabular}{|c|c|c|c|c|c|} 
+ \hline
+ $Grosor(\pm0.1cm)$ & $c(\pm1)$ & $\delta_c$ \\ [0.5ex] 
+ \hline\hline
+ 0.0&9207&95.95\\
+ 1.5&4359&66.02\\
+ 3.0&2554&50.54\\
+ 4.5&1765&42.01\\
+ 6.0&1284&35.83\\
+ 7.5&791&28.12\\
+ 9.0&699&26.44\\
+ 10.5&557&23.60\\
+[1ex] 
+ \hline
+ \end{tabular}
+ \caption{Filtros de carton de diferente grosor}
+ \label{table:carton}
+\end{table}
+
+En estos casos, como error absoluto de las medidas con filtros de aluminio y perspex, se utilizó la desviación estándar; sin embargo, para el cartón debido a sus grandes conteos por su bajo poder de filtro, se tomó solo una medida y su error fue obtenido como la raiz cuadrada del valor medido. 
+
+Ahora, la intensidad de radiación disminuye exponencialmente a través de un medio absorbente de la forma $I(d) = I_oe^{-\lambda d}$. Teniendo esto en cuenta, es necesario realizar un ajuste exponencial de esta forma, teniendo en cuenta la radiación ambiental como una constante aditiva. Dichos ajustes se encuentran representados en las figuras \ref{fig:aluminio}, \ref{fig:perspex} y ref{fig:carton}.\\
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.1\linewidth]{aluminio.jpg}
+\caption{Ajuste para la relació grosor-intensidad en el aluminio}
+\label{fig:aluminio}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.1\linewidth]{perspex.jpg}
+\caption{Ajuste para la relació grosor-intensidad en el perspex}
+\label{fig:aluminio}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.1\linewidth]{carton.jpg}
+\caption{Ajuste para la relació grosor-intensidad en el carton}
+\label{fig:aluminio}
+\end{figure}
+
+
+En estas gráficas se puede apreciar que los coeficientes de absorción son respectivamente $\lambda_al = 4.04\pm0.25cm^{-1}$, $\lambda_perspex = 1.41\pm0.11cm^{-1}$ y $\lambda_carton = 0.50\pm0.04cm^{-1}$. El inverso de estos coeficientes nos darían una longitud de penetración para cada material, la cual es más intuitiva y más fácil de analizar. Dichas longitudes de penetración, con sus respectivos errores están dadas por: $d_al = 0.248\pm0.015cm$, $d_perspex = 0.709\pm0.055cm$ y $d_carton = 2.0\pm0.16cm$ .Así, según este indicador, el mejor filtro (entre los tres probados) para la radiación $\beta$ es el aluminio, seguido del perspex y luego del cartón.\\
 
 \subsection{\label{sec:level2}Interferómetro de Michelson}
 Este experimento es análogo al de Fabry-Perot, solo que para evitar confusiones, las ondas que interfieren se hacen tomar caminos perpendiculares. En este caso procedimos de igual manera que en el experimento de Fabry-Perot y de los demás experimentos de interferometría. Los datos obtenidos en este caso se encuentran en la tabla \ref{table:Michelson}.\\
