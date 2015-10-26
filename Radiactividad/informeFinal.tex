@@ -76,11 +76,11 @@
              %  but any date may be explicitly specified
 
 \begin{abstract}
-Durante este laboratorio se pretendía estudiar los fenómenos ondulatorios de las microondas en distintas configuraciones. En primer lugar se verificó el ángulo de máxima reflexión de las microondas al hacerlas incidir sobre una película metálica. Se comprobó que el ángulo de mayor reflexión es el mismo ángulo que el ángulo incidente con una precisión de $\pm2^o$. Asimismo, durante varias prácticas se determinó experimentalmente la longitud de onda de las microondas. Esto se llevó a cabo usando, en primer lugar un montaje para simular ondas estacionarias con el receptor actuando como reflector parcial. En segunda instancia se midió la longitud de onda mirando el patrón de interferencia de una doble rendija. De la misma manera, se determinó esta longitud de onda usando los interferómetros de Fabry-Perot, Michelson y el espejo de Lloyd. Para todos los casos, se encontró una longitud de onda dentro de los límites esperados obteniendo así un valor con error mínimo dado por $\lambda = 2.86cm$ ($0.1\%$) y un error máximo dado por $\lambda= 2.22cm$ ($22\%$). Se midieron asimismo los fenómenos de polarización, haciendo uso de las cabezas movibles que disponía el equipo de microondas, en donde se encontró como era esperado, la relación de intensidad proporcional a la componente que se dejaba pasar. Similarmente, haciendo uso de partículas pequeñas de estireno ubicadas dentro de un prisma se comprobó el fenómeno de refracción y se comprobó la Ley de Snell, como también pudo encontrarse, con un valor del índice de refracción de $n = 1.41$ ($11\%$ de error) el cual es muy cercano al nominal. Finalmente, haciendo uso del estireno, se diseñó una manga llena de estas partículas que serviría como fibra óptica con la cual se comprobó que la onda se transmitía sin pérdida de energía por este elemento. \\
+En este experimento verificamos la naturaleza del comportamiento de la radiación ionizante por medio de diversos experimentos que caracterizaban cada cualidad particular de este fenómeno nuclear. Pudimos verificar la composición de radiación en términos de rayos $\alpha$, $\beta$ y $\gamma$ de diversas fuentes radiactivas teniendo en cuenta su poder de penetración sobre diferentes filtros. Especialmente verificamos que la radiación $\beta$ es cargada y de masa minúscula, mientras que la radiación $\gamma$ no tiene carga. Demostramos que el proceso estocástico de decaimiento radiativo es bien modelado por la distribución de Poisson. De esta manera pudimos deducir la varianza y el error de las mediciones sin tener muestras estadísticas significativas. Demostramos además con error de alrededor de 2\% que la intensidad de radiación decae con el cuadrado de la distancia a la fuente y como una ley exponencial con la distancia a la que penetra un material absorbente. Con el criterio del intervalo de confianza proporcionado por la varianza, pudimos demostrar la radiactividad o inactividad de diferentes elementos como rocas con trazas radiactivas y diversas sales. Además verificamos cuantitativamente la ley de decaimiento exponencial con el tiempo al medir el tiempo de actividad característico de una muestra de aire radiactivo.
 \end{abstract}
 
 
-\keywords{Microondas, refracción, reflexión, interferencia, fibra óptica, espejo de Lloyd, interferómetro de Michelson, interómetro de Fabry-Perot, ondas estacionarias}%Use showkeys class option if keyword
+\keywords{}%Use showkeys class option if keyword
                               %display desired
 \maketitle
 
@@ -88,245 +88,93 @@ Durante este laboratorio se pretendía estudiar los fenómenos ondulatorios de l
 
 \section{\label{sec:level1}Introducci\'on}
 
-La teoría electromagnética clásica es una de las teorías más exitosas y consistentes. Con esta teoría, aplicando las adecuadas condiciones de frontera y suposiciones sobre los materiales y el espacio, se puede deducir la cuantificación de la forma en como se propaga la luz en diferentes medios y en interfaces de distintos medios. De esta manera, prácticamente partiendo de las ecuaciones de Maxwell, se pueden deducir principios fundamentales ópticos como la ley del plano de incidencia, la ley de reflexión, y la ley de refracción. Otros fenómenos tambien son consecuencia de esta teoría, como la existencia del ángulo de Brewster, la reflexión interna total, entre otros.\\
+El descubrimiento de los elementos radiactivos por Pierre y Marie Curie a principios del siglo XX dio paso al desarrollo de la física nuclear, una oleada de nuevas tecnologías, el desarrollo de nuevas maneras de producción de energía y una especie de nueva revolución industrial. Por ello, el estudio de las fuentes radiactivas ha sido de mayor interés durante el último siglo para la ingeniería y las ciencias naturales en general, y por ello se ha desarrollado este experimento. El entendimiento de la radiactividad será de utilidad para el estudiante para desarrollar competencias en física nuclear y de partículas, como también proveerá de un entendimiento global de los fenómenos que acontecieron en el siglo XX.\\
 
-Si se aplican las ecuaciones del electromagnetismo en la materia, sobre una interfaz de dos medios distintos, se encontrará que las condiciones de frontera para el campo eléctrico $E$ y el campo magnético $B$, con respecto a la superficie de la interfaz estarán dadas por: \cite{Griffiths}\\
+La radiactividad es un fenómeno físico en el cual isótopos inestables de algunos átomos,  con el fin de alcanzar un estado más estable, pierden energía por medio de la emisión de ondas electromagnéticas o bien por la pérdida, de parte de sus núcleos, de partículas más pequeñas.\\
 
-\begin{align*}
-E_1^{\parallel} = E_2^{\parallel}\\
-\epsilon_1E_1^{\perp} = \epsilon_2E_2^{\perp}\\
-\frac{1}{\mu_1}B_1^{\parallel} = \frac{1}{\mu_2}B_2^{\parallel}\\
-B_1^{\perp} = B_2^{\perp}\\
-\end{align*}
+La radiactividad puede ser clasificada en dos categorías según la manera de emisión. Así pues, la radiactividad natural se produce cuando espontáneamente los átomos emiten energía en las formas anteriormente mencionadas para alcanzar un estado más estable.\\
 
-Con la aplicación de estas condiciones sobre una onda incidente con ángulo de incidencia $\theta_I$ monocromática, se pueden obtener las leyes de reflexión y refracción:\cite{Griffiths}\\
+En caso contrario, la radiactividad artificial o inducida ocurre cuando se libera energía al bombardear partículas pequeñas contra átomos inestables causando su ruptura, proceso cono cocido como fisión nuclear. EL proceso opuesto, conocido como fusión nuclear, es el de colisionar átomos pequeños para formar unos más grandes con el fin de liberar energía.\\
+
+Por otra parte, dada su naturaleza de emisión, se puede catalogar la radiación en tres categorías diferentes:\\
 
 
-\begin{equation}
-	\theta_I = \theta_R
-\label{eq:reflexion}
-\end{equation}
+-Radiación alfa ($ \alpha $): Es el flujo de partículas alfa, que consisten de dos neutrones con dos protones. En otras palabras, es la emisión de iones de $He^{2+}$. Este tipo de radiación es altamente ionizante pero muy poco penetrante y sólo se presenta cuando átomos con $A>100$ decaen para formar átomos más pequeños. La producción de una partícula alfa está dada por la ecuación:\\
 
 \begin{equation}
-	n_1\sin{\theta_I} = n_2sin{\theta_T}
-\label{eq:refraccion}
+	^{A}_{Z}X \to ^{A-4}_{Z-2}Y+\alpha
 \end{equation}
 
-Donde $\theta_R, \theta_T$ hacen referencia a los ángulos de reflexión y refracción respectivamente, los cuales, al igual que el ángulo de incidencia, están definidos con respecto a la normal de la superficie de incidencia, por lo que solo pueden tomar valores en $[0,\frac{\pi}{2})$. Por otra parte, el índice de refracción $n$ se define como la razón entre la velocidad de la luz y la velocidad en el medio actual, y está relacionado con la densidad óptica del medio:\\
+-Radiación beta ($ \beta $): Consiste en el flujo de electrones ($ \beta - $), o de positrones ($ \beta + $). Esta radiación, en el primer caso el átomo debe tener un exceso de neutrones, así uno de éstos decaerá para formar un positrón, un electrón y un antineutrino, el cual es una partícula agregada a la ecuación por Fermi para soportar el balance energético y la conservación del número leptónico y bariónico; su existencia fue probada experimentalmente años después. Su reacción está dada por:\\
 
 \begin{equation}
-	n = \frac{c}{v} = \sqrt{\frac{\epsilon\mu}{\epsilon_0\mu_0}}
-\label{eq:indice}
+	n^0 \to p^{+} + e^{-} + \bar{\nu}
 \end{equation}
 
-Cabe resaltar que la ley del plano de incidencia, la cual dice que el rayo incidente, el reflejado y e transmitido se encuentran en un mismo plano que es perpendicular a la interfaz, es la que nos permite caracterizar completamente las direcciones del fenómeno de refracción y reflexión solo con los 3 ángulos mencionados.\\
-
-De la ley de refracción cabe resaltar que si el medio de incidencia es más denso ópticamente que el medio de transmisión, existirá un ángulo de incidencia en el intervalo $[0,\frac{\pi}{2})$, tal que el ángulo de refracción tenga que ser exactamente $\frac{\pi}{2}$ para poder satisfacer la ley de Snell. Esta relación se expone en la ecuación \ref{eq:rit}. Con un posterior análisis sobre los coeficientes de transmisión y reflexión, que indican qué tanta luz se refleja y qué tanta luz se transmite, se puede concluir que para ángulos menores a este ángulo crítico, toda la luz es reflejada, y nada se transmite al otro medio. En estos casos, el ángulo de transmisión tendría que ser mayor a $\frac{\pi}{2}$ o menor a $0$, lo cual no cumple lo asumido por la ley del plano de incidencia. Este es el principio sobre el cual se basa el funcionamiento de la fibra óptica. Aquí, la fibra es tan delgada que el ángulo de incidencia siempre es menor que el ángulo crítico, por lo que siempre se da la reflexión interna total y no se pierde luz por transmisión.\\
+El átomo al cual pertenece el neutrón cambia de la siguiente forma: \\
 
 \begin{equation}
-	\sin{{\theta_I}_{crit}} = \frac{n2}{n1}\sin{\frac{\pi}{2}} < 1
-\label{eq:rit}
+	^{A}_{Z}X \to ^{A}_{Z+1}Y + e^{-} + \bar{\nu}
 \end{equation}
 
-Ahora, para un conductor perfecto el campo dentro del conductor es nulo \cite{Griffiths}, dado que cualquier campo que se intente aplicar, moverá las cargas en la superficie del conductor de tal manera que lo anule. En este sentido, si se tiene una rejilla de un material conductor, se puede puede dejar pasar campo eléctrico solo en la dirección de la rejilla, dado que la componente del campo que no sea paralela, encontrará el conductor y se anulará. En este sentido, con una rejilla metálica se puede polarizar una onda electromagnética.\\
-
-Si se se tiene luz polarizada incidente a un polarizador con un desfase en la dirección de polarización dado por $\theta_1$ respecto a la luz incidente, teniendo en cuenta que solo puede pasar la componente de campo eléctrico paralela al polarizador, la intensidad de la luz recibida estará dada por:\\
+También puede ocurrir que el neutrón decaiga para producir un positrón y un neutrino, en cuyo caso el átomo cambia de la siguiente manera, esta radiación es conocida como beta positiva:\\
 
 \begin{equation}
-I = \frac{1}{2}\epsilon_0{E^{\parallel}}^2 = \frac{1}{2}\epsilon_0{E_0}^2{\cos^2{\theta_1}} \propto \cos^2{\theta_1}
-\label{eq:polarizador}
+^{A}_{Z}X \to ^{A}_{Z+1}Y + e^{+} + \nu
 \end{equation}
 
-Si se pone otro polarizador en medio de estos dos, con desfase $\theta_2$ con respecto a la luz incidente, la intensidad estará dada al aplicar \ref{eq:polarizador} dos veces, teniendo en cuenta que el desfase entre los dos polarizadores es $\theta_1-\theta_2$:\\
+-Radiación Gamma ($ \gamma $): La radiación Gamma es la emisión de ondas electromagnéticas con longitud de onda muy corta. Se considera la radiación más peligrosa y penetrante, ya que usualmente se requiere de muros de hormigón de varios centímetros para detenerla. Esta radiación se produce cuando un átomo decae de un estado excitado a otro más estable, pero no pierde ninguna partícula. Así:\\
 
 \begin{equation}
-I = \frac{1}{2}\epsilon_0{E_0}^2{\cos^2{\theta_2}}\cos^2{ \left( \theta_1-\theta_2 \right) } \propto \cos^2{ \theta_1}\cos^2{ \left( \theta_1-\theta_2 \right) }
-\label{eq:polarizador2}
+	^{A}_{Z}X^{\star} \to ^{A}_{Z}X + \gamma 
 \end{equation}
 
-Nótese que si la luz incidente es perpendicular al polarizador, si solo tenemos en cuenta un polarizador, $\theta_1 = \frac{\pi}{2}$ entonces la onda transmitida tendrá intensidad nula. sin embargo, si ponemos otro polarizador en medio, tendremos de forma general $\theta_1 - \theta_2 \neq \frac{\pi}{2}$ por lo que la onda transmitida no necesariamente tendrá intensidad nula.\\
-
-Otro experimento que es sencillo de cuantificar con la teoría electromagnética es el experimento de la doble rendija. Si se hace incidir luz monocromática coherente sobre una placa conductora (no deja pasar luz) con una rendija doble con una separación $d$, se observará un patrón de difracción. Este patrón ondulatorio se debe al principio de superposición del campo electromagnético, el cual dice que el campo electromagnético en un punto debido a dos fuentes es la suma de los campos producidos por cada fuente por separado en dicho punto \cite{Griffiths}. Debido a esto, si consideramos ondas, la suma de ambos campos es dependiente de la fase. Si se hace un análisis de los caminos que toman las ondas que pasan por cada una de las rendijas se llegará a la conclusión de que la interferencia destructiva se da cuando:\\
-
-
-\begin{equation}
-d\sin{\theta} = n\lambda
-\label{eq:interferencia}
-\end{equation}
-
-Donde $\theta$ se refiere al ángulo respecto al centro de la rejilla de difracción donde se toma la medida de intensidad de la luz.\\
-
-Con el experimento de la doble rendija se puede introducir al campo de la interferometría, donde se busca medir distancias del orden de la longitud de onda con la que se trabaja, al mirar la patrones de interferencia o simplemente la distancia entre los máximos o mínimos que ocasiona la superposición de dos haces de luz que han tomado caminos diferentes. El principio de interferencia por diferencia de fases de haces de luz es el principio detrás de experimentos importantes actuales como los detectores de ondas gravitacionales, y de experimentos que hicieron historia como el de Michelson-Morley.\\
-
-Una de las formas de hacer interferometría con ondas esféricas es el espejo de Lloyd. En dicho montaje, mostrado en la figura \ref{fig:espejo} se tiene un material conductor paralelo a la dirección emisor-receptor, situado a mitad de camino entre estos dos instrumentos, cuya distancia perpendicular se puede variar para provocar interferencia entre la onda que se refleja en el conductor y la onda que toma el camino emisor-receptor. Un análisis sencillo de la diferencia de caminos, asumiendo que la onda se propaga esféricamente, nos dice que hay interferencia constructiva cuando se tiene:\\
-
-\begin{equation}
-D-2{\left(d^2 + {\left(\frac{D}{2}\right)}^2\right)}^\frac{1}{2} = n\lambda
-\label{eq:Lloyd}
-\end{equation}
-
-Donde $D$ es la distancia del receptor al emisor, $d$ es la distancia del espejo al centro de la trayectoria, $\lambda$ es la longitud de onda de la luz incidente, y $n$ es un entero.\\
-
-De este experimento de interferometría se puede notar claramente que la condición de interferencia no es lineal, y que además, al alejar el espejo, se disminuye la intensidad de la onda que se refleja (asumiendo que se propaga esféricamente), lo cual altera un poco la condición de interferencia.\\
-
-Un experimento de interferometría que no es afectado por estos factores de no linealidad y de variación de la intensidad, es el interferómetro de Michelson y el de Fabry-Perot. Estos interferómetros trabajan bajo el mismo principio y lo único que los diferencia es el ordenamiento espacial de los elementos. El experimento de Michelson es mostrado en la figura \ref{fig:intmichelson} y consiste en superponer dos haces de luz que han tomado distintos caminos con la ayuda de un material semi-transparente. El de Fabry-Perot es análogo (figura \ref{fig:fabryperot}, sin embargo, los materiales semi-transparentes no están dispuestos a $45^o$ sino en medio del receptor y el transmisor.  En este caso, la relación de interferencia para máximos es simple de deducir y simple en general:\\
-
-\begin{equation}
-d = n\frac{\lambda}{2}
-\label{eq:Michelson}
-\end{equation}
-
-Donde $d$ es la distancia a la que se corre el receptor o el emisor , entre dos máximos o mínimos. \\
-
-De esta manera, muchos otros fenómenos ópticos pueden ser caracterizados con la teoría electromagnética clásica, sin embargo, no es objetivo de este informe describirlos todos .\\ 
+Los diferentes tipos de radiación requieren así, diferentes tipos de barreras para ser detenidas y esto por lo general depende de la masa y la carga de la partícula emitida. Así, dado el gran tamaño de la partícula alfa, se requiere sólo una hoja de papel. Los electrones son significativamente más pequeños, y por lo tanto requerirán una lámina delgada de algún metal o unos centímetros de agua.\\
 
 
 \section{\label{sec:level1}Montaje experimental}
+\textit{Contador Geiger-Muller}\\
+El dispositivo usado durante la práctica es un contador de Geiger-Muller. Éste es un dispositivo que sirve para medir la intensidad de la fuente radiactiva. El dispositivo consiste en un filamento conductor muy delgado dentro de un tubo metálico. Ambos están aislados por un gas inerte. De esta manera, cuando una partícula desprendida de un átomo que está en proceso de decaimiento, entra al detector e interactúa con el filamento, produce un impulso eléctrico cuya amplificación es audible. Esto se conoce como una cuenta. Así pues, a mayor cantidad de cuentas, mayor se considera que es la intensidad de la fuente radiactiva.\\
 
-Durante la práctica se utilizó el equipo de microondas de PASCO modelo WA-9314B y se siguieron cuidadosamente las instrucciones detalladas de la guía del usuario \cite{guia}.\\
-
-\subsection{\label{sec:level2}Reflexión de Microondas}
-Para esta manipulación, se configuró el montaje que se muestra en la figura \ref{fig:reflexion} .\\
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.7\linewidth]{Pictures/reflexion}
-\caption{Montaje experimental - Refelxión de Microondas}
-\label{fig:reflexion}
-\end{figure}
-
-A continuación, dejando el emisor de ondas fijo, a un ángulo de $45^o$ con respecto a la normal del reflector, se procedió a mirar para qué ángulo el receptor mostraba una señal máxima. Se encontró que $45^o$ era el máxmimo de la señal. Esto se hizo para verificar el montaje. \\
-
-Acto seguido, la intensidad del receptor se ajustó en 30X para asegurarse de detectar las más pequeñas variaciones, y se procedió a mover el ángulo incidente desde $20^o$ a $90^o$. El receptor se movió angularmente hasta detectar un máximo. De allí se pudo inferir la relación entre el ángulo incidente y el ángulo reflejado.  \\
-
-Debe anotarse que dado que las ondas son esféricas, hay una medición extra dado que la onda recibida por detector no es sólamente la reflejada sino también se suma una porción directamente proveniente del emisor.\\
-
-\subsection{\label{sec:level2}Refracción a través de un prisma}
-
-Para esta manipulación se configuró el montaje mostrado en la figura \ref{fig:refraccion}. El compartimiento triangular del centro actuaba como prisma. \\
+Durante esta práctica utilizamos este contador en diferentes configuraciones para medir la radiación emitida por diversas fuentes radiactivas y por el ambiente. En general posicionábamos el detector el dispositivo Geiger en frente de una fuente como se muestra en la figura \ref{fig:montaje}. Con ayuda de los soportes que se muestran en dicha figura podíamos variar la distancia entre el detector y la fuente además de su ángulo. Además de esto, las escalas estaban impresas en la mesa de trabajo, por lo cual, la toma de medidas era sencilla.\\
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.7\linewidth]{Pictures/refraccion}
-\caption{Montaje Experimental - Refracción por prisma}
-\label{fig:refraccion}
+\includegraphics[width=1\linewidth]{montaje.jpg}
+\caption{Montaje experimental general}
+\label{fig:montaje}
 \end{figure}
- 
-En primer lugar, se procedió a determinar la influencia de este material en la señal del receptor y una vez demostrado que la diferencia era prácticamente nula, se rellenó el interior del prisma con partículas de estireno.\\ 
 
-Con el emisor de ondas fijo, se procedió a mover el detector hasta detectar un máximo en la señal.  Se denota, $ \theta $ el ángulo que marca directamente el detector con el goniómetro. \\
-
-Una vez hallado este ángulo, con el diagrama de la figura \ref{fig:refraccion} se pueden determinar los ángulos incidente y refractado y así hallar el coeficiente de refracción del estireno por medio de la Ley de Snell. \\
-
-En este caso, el medio incidente es el estireno.\\
- 
-\subsection{\label{sec:level2}Polarización}
-
-Este experimento tuvo dos partes. En primer lugar, el montaje consistía en el que se muestra en la figura \ref{fig:polarizador1} con la excepción de que no había una rejilla de polarización en el medio. Con esto, receptor y emisor frente a frente se procedió a mover el cuerno del detector de ondas dejando el receptor fijo. De esta manera, las ondas producidas impactarían el detector con diferentes ángulos de polarización. \\ 
+En el caso en que era preciso tomar conteos con filtros, se ponían filtros con ayuda de los soportes entre el detector y la fuente, como se muestra en la figura \ref{fig:montaje-filtros}. \\
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.7\linewidth]{Pictures/polarizador1}
-\caption{Montaje Experimental - Polarización}
-\label{fig:polarizador1}
+\includegraphics[width=1\linewidth]{montaje2.jpg}
+\caption{Montaje experimental con filtros}
+\label{fig:montaje-filtros}
 \end{figure}
 
-Se midieron así, en aumentos de $5^o$ las señales recibidas para un rango de ángulos de polarización entre $0^o$ y $90^o$. \\
-
-En la segunda parte se prepararon el emisor y el receptor con direcciones paralelas de polarización, se incluyó la rejilla de polarización imitando el montaje en la figura \ref{fig:polarizacion}, y ésta se ubicó en ángulo de $0^o$,$22.5^o$,$45^o$, $67.5^o$ y $90^o$ con respecto al ángulo del emisor. Luego se  se repitieron las medidas para $0^o$, $45^o$ y $90^o$, esta vez configurando el emisor y el receptor en direcciones perpendiculares de polarización.\\ 
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.7\linewidth]{Pictures/polarizacion}
-\caption{Montaje Experimental - Polarización 2}
-\label{fig:polarizacion}
-\end{figure}
-
-\subsection{\label{sec:level2}Determinación de $ \lambda $}
-\textit{Interferencia de doble rendija} \\
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.7\linewidth]{Pictures/Interferencia}
-\caption{Montaje Experimental - Interferencia a Doble Rendija}
-\label{fig:Interferencia}
-\end{figure}
-
-En este experimento se armó el montaje mostrado en la figura \ref{fig:Interferencia}. Dejando el emisor de ondas fijo, se movió el detector a través del ángulo $ \theta $ mostrado en la figura. Para un barrido de este ángulo entre $0^o$ y $85^o$ en aumentos de $5^o$, se anotó el valor de la intensidad detectada por el receptor. \\
-
-Se repitieron las medidas cambiando la distancia de separación entre rendijas.\\ 
-
-\textit{Ondas estacionarias} \\
-
-Para medir ondas estacionarias se utilizó como reflector el detector mismo. Se ubicaron frente a frente ambos equipos como se muestra en la figura \ref{fig:estacionarias}. \\
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.7\linewidth]{Pictures/estacionarias}
-\caption{Montaje Experimental - Ondas estacionarias}
-\label{fig:estacionarias}
-\end{figure}
-
-A continuación, se ubicó el detector en donde éste mostrara la lectura de un máximo, y acto seguido se procedió a deslizar el detector hacia atrás. En dos manipulaciones diferentes, se contaron 20 y 30 máximos respectivamente y se procedió a determinar $ \lambda $ con la fórmula para los máximos de una onda estacionaria, la cual es la misma condición presentada en la ecuación \ref{eq:Michelson}. \\ 
-
-\textit{Espejo de Lloyd} \\
-
-Para determinar $ \lambda $ se utilizó también el montaje del espejo de Lloyd mostrado en la figura \ref{fig:espejo}. En este caso el receptor mostrará una señal máxima cuando ambos caminos recorridos por la onda emitida estén en fase. \\
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.7\linewidth]{Pictures/espejo}
-\caption{Montaje Experimental - Espejo de Lloyd}
-\label{fig:espejo}
-\end{figure}
-
-Para medir este fenómeno se dejan reflector y emisor fijos, separados a una distancia idéntica desde el centro del sistema y se desplaza el reflector hacia atrás. \\
-
-En primer lugar, debe ubicarse el reflector en el primer mínimo que sea posible detectar y acto seguido desplazarlo hacia atrás hasta encontrar cuando menos 10 mínimos de intensidad. De esta forma, la diferencia de caminos debe cumplir la ecuación \ref{eq:Lloyd} para producir interferencia constructiva\\
-
-La medición se realizó dos veces para diferentes separaciones entre emisor y receptor.\\
-
-
-\textit{Interferómetro de Fabry-Perot} \\
-
-En este caso se recreó el interferómetro de Fabry-Perot, haciendo uso del montaje mostrado en la figura \ref{fig:fabryperot}. Durante esta manipulación se pretendía encontrar la longitud de onda así que se procedió de manera similar al experimento de ondas estacionarias y al espejo de Lloyd.\\
+De la misma manera, en el caso en que verificamos el efecto del campo magnético sobre la radiación, lo que hicimos fue posicionar dos magnetos con polarización paralela en medio de la trayectoria de la radiación de la fuente al detector. Dichos magnetos eran posicionados con ayuda del soporte multifuncional proporcionado en el laboratorio. Un ejemplo de este montaje se puede apreciar en la figura \ref{fig:magnetico}.\\
 
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.7\linewidth]{Pictures/fabryperot}
-\caption{Montaje Experimental - Interferómetro de Fabry-Perot}
-\label{fig:fabryperot}
+\includegraphics[width=1\linewidth]{magnetos2.jpg}
+\caption{Montaje experimental con magnetos}
+\label{fig:magnetico}
 \end{figure}
 
-Dejando el emisor fijo se ubicó el receptor en un mínimo. Acto seguido, se procedió a mover el mismo hacia atrás hasta haber pasado por n mínimos de intensidad. Así pues, con la fórmula \ref{eq:Michelson}, se determinó la longitud de onda. \\ 
+En el caso especial en que medimos la radiactividad en una muestra de aire proveniente de una manta radiactiva, encerramos dicho aire con ayuda de una jeringa en un recipiente con apertura del mismo tamaño y forma del contador. Acto seguido tapamos el recipiente con el contador y empezamos a tomar medidas. Dicho montaje puede ser apreciado en la figura \ref{fig:airemontaje} .\\
 
-\textit{Interferómetro de Michelson} \\
-
-En este experimento se trató de recrear el experimento de Michelson-Morley con microondas, haciendo uso del montaje mostrado en la figura \ref{fig:intmichelson}. \\
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.7\linewidth]{Pictures/intmichelson}
-\caption{Montaje Experimental - Interferómetro de Michelson}
-\label{fig:intmichelson}
+\includegraphics[width=1\linewidth]{aire.jpg}
+\caption{Montaje experimental para una muestra de aire radiactivo}
+\label{fig:airemontaje}
 \end{figure}
 
-Se ubicó el detector en el mínimo más cercano encontrado con respecto al centro del sistema y se procedió a deslizar el equipo hacia atrás contando mínimo diez mínimos de intensidad. Con una fórmula similar a las utilizadas anteriormente, se determinó $ \lambda $. \\
-
-La fórmula utilizada es la misma que para el interferómetro de Fabry-Perot. \\
-
-
-\subsection{\label{sec:level2}Fibra Óptica}
-
-Para el experimento de fibra óptica se utilizaron nuevamente las partículas de estireno, sólo que en esta ocasión se configuró una suerte de fibra óptica al ponerlas de relleno en una bolsa larga de plástico. \\
-
-El experimento es de énfasis cualitativo y consistió en estudiar cómo, por medio de la fibra óptica, el detector puede leer la intensidad de la onda incidente en diferentes configuraciones. \\
-
-Dichas configuraciones consistían en mover el cuerno del emisor y el receptor cambiando el ángulo de polarización como también ver cómo cambiaba la señal al cambiar la curvatura de la fibra. \\ 
-
-Se quería comprobar también que si uno de los extremos no se encontraba debidamente introducido en los cuernos de los equipos, la lectura sería cero. \\
-
+En general, debido a que el detector Geiger era separado del su contador, unidos únicamente por un cable, ese experimento permitía mucha libertad de movimiento para poder configurar los montajes y realizar las mediciones.\\
 
 \section{\label{sec:level1}Resultados y An\'alisis}
 
@@ -352,14 +200,16 @@ En este experimento medimos la radiación de fondo promedio. Tomamos 5 datos de 
 
 El objetivo de este experimento era verificar si se podía detectar radiación en ausencia de una muestra. Esta radiación detectada la llamamos radiación de ambiente y se debe a decaimientos espontáneos de isótopos radiactivos en la materia que nos rodea; a la radiación cósmica de fondo y a las muestras de radiación que se encontraban en mesas cercanas. Las muestras que se encontraban en dichas mesas variaban constantemente su ubicación y su nivel de radiactividad dependía de los experimentos que otros estuvieran haciendo, por lo cual era conveniente medir la radiación de fondo al realizar cada montaje.\\
 
-Esta radiación de fondo tiene como promedio un valor de $0.353$ conteos por segundo. En estas mediciones, debido al caracter probabilístico de su naturaleza, una buena medida del error es la desviación estándar. A lo largo de este informe escogemos la definición de error absoluto asociado a su medida como tres veces su desviación estándar. Esta medida, $\delta x = 3\sigma_x$ tiene un $99.7\%$ de confianza, es decir, cada medida tiene  $99.7\%$ de probabilidad de estar en el rango dado por dicho error. En este caso, la media, incluyendo su error absoluto está dada por $C = 0.353 \pm 0.193\frac{cts}{s}$. Esta medida de error, es cada vez más confiable entre más medidas tengamos, dado que la desviación estandar real asociada a la distribución de probabilidad del fenómeno se obtiene, por definición, sobre un número infinito de realizaciones de dicha distribución. Podemos ver la veracidad de este factor dado que en este caso obtuvimos un error relativo bastante grande para solo 5 medidas: $54\%$.\\
+Esta radiación de fondo tiene como promedio un valor de $21.2$ conteos por cada 10 segundos. En estas mediciones, debido al caracter probabilístico de su naturaleza, una buena medida del error es la desviación estándar. A lo largo de este informe escogemos la definición de error absoluto asociado a su medida como su desviación estándar. Esta medida, $\delta x = \sigma_x$ tiene un $68.27\%$ de confianza, es decir, cada medida tiene  $68.27\%$ de probabilidad de estar en el rango dado por dicho error. \\
+
+En este caso, la media, incluyendo su error absoluto está dada por $C = 21.2 \pm 3.86\frac{cts}{10s}$. Esta medida de error, es cada vez más confiable entre más medidas tengamos, dado que la desviación estandar real asociada a la distribución de probabilidad del fenómeno se obtiene, por definición, sobre un número infinito de realizaciones de dicha distribución. Podemos ver la veracidad de este factor dado que en este caso obtuvimos un error relativo bastante grande para solo 5 medidas: $18.2\%$.\\
 
 \subsection{\label{sec:level2}Variaciones} 
 En este experimento verificamos la naturaleza estadística de la radiación al tomar 50 medidas de 10 segundos sobre una manta incandescente.\\
 
-La distribución de probabilidad que mejor caracteriza el proceso estocástico de decaimiento de s radiactivos es la distribución de Poisson. Esta distribución tiene como característica que su varianza es igual a su promedio, y en términos de la desviación estándar: $\sigma_x^2 = \bar{x}$. Debido a que esta distribución es discreta, hacer cálculos de intervalos de confianza resulta difícil, sin embargo, podemos aproximar su forma de campana como una Gaussiana. En este sentido, se tiene que el $68.27\%$ de los datos estarán concentrados alrededor del promedio con radio igual a una desviación estándar. Si se escoje un radio de $2\sigma$, $95.45\%$ de los datos estarán concentrados en el intervalo, y si se tienen $3\sigma$ (el error absoluto definido para este informe), se tendrá una confianza del $99.73\%$.\\
+La distribución de probabilidad que mejor caracteriza el proceso estocástico de decaimientos radiactivos es la distribución de Poisson. Esta distribución tiene como característica que su varianza es igual a su promedio, y en términos de la desviación estándar: $\sigma_x^2 = \bar{x}$. Debido a que esta distribución es discreta, hacer cálculos de intervalos de confianza resulta difícil, sin embargo, podemos aproximar su forma de campana como una Gaussiana. En este sentido, se tiene que el $68.27\%$ de los datos estarán concentrados alrededor del promedio con radio igual a una desviación estándar. Si se escoje un radio de $2\sigma$, $95.45\%$ de los datos estarán concentrados en el intervalo, y si se tienen $3\sigma$ (el error absoluto definido para este informe), se tendrá una confianza del $99.73\%$.\\
 
-Teniendo los anteriores datos en cuenta, se puede notar que el porcentaje de error debido a la definición $\delta x = 3\sigma_x$ está dado por $\epsilon = \frac{3\sigma_x}{\bar{x}} = \frac{3}{\bar{x}}$. Esto evidencia la importancia del tiempo en las medidas que tomamos, ya que si se toman conteos por un intervalo de tiempo mayor, el promedio será claramente mayor, y por tanto, el error relativo disminuirá. Además de esto, con esta propiedad es posible estimar el error asociado a una medida sin tener una muestra estadistica significativamente grande.\\
+Teniendo los anteriores datos en cuenta, se puede notar que el porcentaje de error debido a la definición $\delta x = \sigma_x$ está dado por $\epsilon = \frac{\sigma_x}{\bar{x}} = \frac{1}{\sqrt{\bar{x}}}$. Esto evidencia la importancia del tiempo en las medidas que tomamos, ya que si se toman conteos por un intervalo de tiempo mayor, el promedio será claramente mayor, y por tanto, el error relativo disminuirá. Además de esto, con esta propiedad es posible estimar el error asociado a una medida sin tener una muestra estadistica significativamente grande.\\
 
 
 Sin más preámbulos, los datos obtenidos se encuentran consignados en la tabla \ref{table:variaciones} y un histograma donde se pueden apreciar claramente las características de una distribución de Poisson con baja resolución, se encuentra graficado en la figura \ref{fig:variaciones}.\\
@@ -404,7 +254,7 @@ Sin más preámbulos, los datos obtenidos se encuentran consignados en la tabla 
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.8\linewidth]{variacion.jpg}
+\includegraphics[width=1\linewidth]{variacion.jpg}
 \caption{Histograma de los conteos medidos}
 \label{fig:variaciones}
 \end{figure}
@@ -437,7 +287,7 @@ Los datos obtenidos se encuentran consignados en la tabla \ref{table:sales}.\\
 \label{table:sales} 
 \end{table}
 
-De esta tabla, teniendo en cuenta las desviaciones estándares, se puede concluir el cloruro de potasio es claramente radiactivo ya que, teniendo en cuenta el error estadístico, su intervalo no cae en la radiación ambiente; el cloruro de calcio es posiblemente radiactivo ya que, aunque su promedio es mayor, hay una pequeña intersección entre su intervalo de confianza y el de la radiación de ambiente; y el resto de sales, cloruro de sodio y sulfato de cobre, no presentan una diferencia significativa con la radiación de ambiente para tener una conclusión convinvcente.\\
+De esta tabla, teniendo en cuenta las desviaciones estándares, se puede concluir el cloruro de potasio es claramente radiactivo ya que, teniendo en cuenta el error estadístico, su intervalo no cae en la radiación ambiente; el cloruro de calcio es posiblemente radiactivo ya que, aunque su promedio es mayor, hay una pequeña intersección entre su intervalo de confianza y el de la radiación de ambiente; y el resto de sales, cloruro de sodio y sulfato de cobre, no presentan una diferencia significativa con la radiación de ambiente para tener una conclusión convincente.\\
 
 \subsection{\label{sec:level2}Radiactividad en rocas} 
 Al igual que en la sección anterior, verificamos radiactividad esta vez en rocas en lugar de sales. Para esto, hicimos las mismas 4 mediciones de 60 segundos sobre cada una de las muestras y sobre el ambiente. Las rocas utilizadas en este experimento contenían cada una, y por separado, restos de Ba-133, de Cd-109 y Cs-137.\\
@@ -512,7 +362,7 @@ Por otro lado, los conteos del filtro metálico son claramente menores que los c
 
 Así, la columbita produce en promedio un valor total de $294 \pm 13.14$ conteos cada 100 segundos, mientras que con el filtro de metal produce $127.33 \pm 17.02$. Omitiendo las varianzas y asumiendo que el filtro de metal para completamente la radiación $\beta$, la proporción de radiación $\beta$ y $\gamma$ es de respectivamente de $56.67 \pm 0.06\%$  y de $43.33 \pm 0.06\%$. Aquí los errores absolutos se calcularon con las respectivas propagaciones de error.\\
 
-La composición de radiación $\beta$ de la roca se puede verificar cualitativamente porque al voltearla el número de conteos disminuyó. En este caso, la misma roca actuaba como un filtro no perfecto no tan poderos como el de metal que usamos, pero que de todas maneras reducía la radiación $\beta$ recibida por el contador.\\
+La composición de radiación $\beta$ de la roca se puede verificar cualitativamente porque al voltearla el número de conteos disminuyó. En este caso, la misma roca actuaba como un filtro no perfecto y no tan poderoso como el de metal que usamos, pero que de todas maneras reducía la radiación $\beta$ recibida por el contador.\\
 
 \subsection{\label{sec:level2}Diferentes tipos de radiacion en manta incandescente}
 En este experimento el objetivo era el mismo que en la sección anterior, esta vez, para una manta incandescente. Para lograr dicho objetivo tomamos 5 conteos en 60 segundos cada uno teniendo como objetivo la manta, la manta con un filtro de papel y luego de plomo, y el ambiente. Los datos obtenidos se encuentran en la tabla \ref{table:incandescente}.\\
@@ -545,7 +395,7 @@ De esta manera tenemos que la manta provoca en 60 segundos um promedio de $685.2
 Aquí vemos que la manta incandescente emite todos los tipos de radiación, $\alpha$, $\beta$ y $\gamma$. Ahora, dado que la radiación $\beta$ y $\alpha$ no puede ser emitida en un mismo proceso atómico, los resultados de este experimento demuestran que la manta incandescente contiene materiales reactivos que emiten radiación por al menos 2 procesos atómicos.\\
 
 \subsection{\label{sec:level2}Dependencia de la intensida de radiación con la distancia}
-En este experimento pretendíamos medir la dependencia de la intensidad de radiación con la distancia de la fuente. Para ello, tomamos conteos de 10 segundos de una muestra de Ra-226 a distancias desde 2cm hasta 10cm equiespaciadas a 1cm. Además, se duplicó el experimento con medidas de 10 segundos una muestra del mismo elemento, esta vez, mucho más radiactiva. Los datos obtenidos se encuentran en la tabla \ref{table:distancia} y \ref{table:fuerte}.\\
+En este experimento pretendíamos medir la dependencia de la intensidad de radiación con la distancia de la fuente. Para ello, tomamos conteos de 10 segundos de una muestra de Ra-226 a distancias desde 2cm hasta 10cm equiespaciadas a 1cm. Además, se duplicó el experimento con medidas de 10 segundos sobre una muestra del mismo elemento, esta vez, mucho más radiactiva. Los datos obtenidos se encuentran en la tabla \ref{table:distancia} y \ref{table:fuerte}.\\
 
 
 \begin{table}[h!]
@@ -587,7 +437,7 @@ En este experimento pretendíamos medir la dependencia de la intensidad de radia
 	\hline
  \end{tabular} 
   \caption{Dependencia de la radiación con la distancia (Ra-226 fuerte)}
-\label{table:distancia} 
+\label{table:fuerte} 
 \end{table}
 
 Debido al poder de la segunda fuente utilizada, no necesitamos un fuerte respaldo estadístico, ya que según la distribución de Poisson, el error relativo disminuye con el inverso de la raiz del promedio (en este caso la medida). Así, solo tomamos una medida de 10 segundos y tomamos la raiz cuadrada de dicho valor como error. Cabe resaltar que para $d= 2cm$ y $d = 3cm$ en la muestra fuertemente radiactiva, el contador se saturaba, por lo que no tomamos estos conteos.\\
@@ -598,7 +448,7 @@ Para poder analizar la dependencia de la intensidad con la distancia de una mejo
  	C(d) = A + \frac{B}{d^2}
 \end{equation}
 
-Donde $A$ corresponde a la intensidad percibida e invariante del ambiente, y B corresponde a una constante de calibre  para la dependencia de la fuente de radio con la distancia. En el caso del Ra-226 fuerte el efecto del ambiente es sumamente insignificante, por lo cual se tomó $A = 0$.\\
+Donde $A$ corresponde a la intensidad percibida e invariante del ambiente, y B corresponde a una constante de calibre  para la dependencia de la fuente de Radio con la distancia. En el caso del Ra-226 fuerte el efecto del ambiente es sumamente insignificante, por lo cual se tomó $A = 0$.\\
 
 Los resultados de los ajustes, así como sus respectivas gráficas se encuentran en las figuras \ref{fig:distancia} y \ref{fig:cuadrados}.\\
 
@@ -661,7 +511,7 @@ En esta sección evaluamos el alcance de la radiación $\alpha$ emitida por una 
  \label{table:alcance}
 \end{table}
 
-Cabe resaltar que la fuente tomada era sumamente radiactiva y para distancias muy cortas el contador se saturaba, por lo se omitieron dichas medidas. Además, dado que no se tomaron muchas medidas se tomó como error absoluto la raiz cuadrada de las medidas, lo cual es una buena aproximación teniendo en cuenta la distribución de Poisson que caracteriza los decaimientos.\\
+Cabe resaltar que la fuente distanciatomada era sumamente radiactiva y para distancias muy cortas el contador se saturaba, por lo que se omitieron dichas medidas. Además, dado que no se tomaron muchas medidas se tomó como error absoluto la raiz cuadrada de las medidas, lo cual es una buena aproximación teniendo en cuenta la distribución de Poisson que caracteriza los decaimientos.\\
 
 Ahora, para verificar el alcance de la radiación $\alpha$, tenemos que obtener en qué fracción se reduce la radiación total al imponer el filtro a diferentes distancias. Dicha fracción corresponde a la fracción  de rayos $\alpha$ en la radiación total. Cuando la fracción reducida sea significativamente pequeña, podemos decir que la radiación $\alpha$ llegó a su límite de distancia recorrida. En la tabla \ref{table:fraccion} se pueden apreciar las diferencias de radiación para cada distancia, así como la fracción que esta diferencia representa respecto a la radiación sin filtro. Los errores expuestos fueron calculados con la respectiva propagación de error tomando los errores de Poisson ya mencionados.\\ 
 
@@ -705,7 +555,7 @@ Ahora, para verificar el alcance de la radiación $\alpha$, tenemos que obtener 
 
 En esta tabla se puede apreciar que la fracción de radiación $\alpha$ parada por el filtro de papel no varió significativamente en las distancias medidas. A pesar de esto si se pudo notar una disminución generalizada de esta radiación alrededor de los 5cm. Después de dicha distancia la fracción no varió generalizadamente. \\
 
-Ahora, debido a la interacción del aire con la radiación $\alpha$, esta no tiene mucho alcance dependiendo de su energía. Para el aire a presión constante y a $15^pC$, este alcance está dado por $D= 0.4769 E^{1.5}\frac{cm}{Mev}$. Si tenemos en cuenta la caida en la fracción de radiación $\alpha$, podemos encontrar que la muestra emitía dichos rayos con energías alrededor de $4.80 MeV$. Con un poco de investigación podemos intuir que dicha energía corresponde a la transición $Ra-226 \rightarrow Ra-222$, la cual es de $4.871Mev$. Si esta es, en efecto, la transición correcta, este método de cálculo de energía provoca únicamente un $2\%$ de error, congruente con los errores obtenidos anteriormente con estos montajes.\\
+Ahora, debido a la interacción del aire con la radiación $\alpha$, esta no tiene mucho alcance dependiendo de su energía. Para el aire a presión constante y a $15^oC$, este alcance está dado por $D= 0.4769 E^{1.5}\frac{cm}{Mev}$. Si tenemos en cuenta la caida en la fracción de radiación $\alpha$, podemos encontrar que la muestra emitía dichos rayos con energías alrededor de $4.80 MeV$. Con un poco de investigación podemos intuir que dicha energía corresponde a la transición $Ra-226 \rightarrow Ra-222$, la cual es de $4.871Mev$. Si esta es, en efecto, la transición correcta, este método de cálculo de energía provoca únicamente un $2\%$ de error, congruente con los errores obtenidos anteriormente con estos montajes.\\
 
 \subsection{\label{sec:level2}Influencia del grosor de los materiales en la radiación $\beta$}
 En este experimiento medimos la influencia del grosor de materiales como el cartón, perspex y aluminio sobre la radiación $\beta$ de una fuente de Ra-226. Para ello tomamos diferentes medidas de conteo durante 10 segundos con la muestra a 3 cm del detector. Los datos obtenidos se encuentran en las tablas \ref{table:carton}, \ref{table:perspex} y \ref{table:aluminio}.\\
@@ -768,9 +618,9 @@ En este experimiento medimos la influencia del grosor de materiales como el cart
  \label{table:carton}
 \end{table}
 
-En estos casos, como error absoluto de las medidas con filtros de aluminio y perspex, se utilizó la desviación estándar; sin embargo, para el cartón debido a sus grandes conteos por su bajo poder de filtro, se tomó solo una medida y su error fue obtenido como la raiz cuadrada del valor medido. 
+En estos casos, como error absoluto de las medidas con filtros de aluminio y perspex, se utilizó la desviación estándar; sin embargo, para el cartón debido a sus grandes conteos por su bajo poder de filtro, se tomó solo una medida y su error fue obtenido como la raiz cuadrada del valor medido. \\
 
-Ahora, la intensidad de radiación disminuye exponencialmente a través de un medio absorbente de la forma $I(d) = I_oe^{-\lambda d}$. Teniendo esto en cuenta, es necesario realizar un ajuste exponencial de esta forma, teniendo en cuenta la radiación ambiental como una constante aditiva. Dichos ajustes se encuentran representados en las figuras \ref{fig:aluminio}, \ref{fig:perspex} y ref{fig:carton}.\\
+Ahora, la intensidad de radiación disminuye exponencialmente a través de un medio absorbente de la forma $I(d) = I_oe^{-\lambda d}$. Teniendo esto en cuenta, es necesario realizar un ajuste exponencial de esta forma, teniendo en cuenta la radiación ambiental como una constante aditiva. Dichos ajustes se encuentran representados en las figuras \ref{fig:aluminio}, \ref{fig:perspex} y \ref{fig:carton}.\\
 
 
 \begin{figure}[h!]
@@ -784,52 +634,162 @@ Ahora, la intensidad de radiación disminuye exponencialmente a través de un me
 \centering
 \includegraphics[width=1.1\linewidth]{perspex.jpg}
 \caption{Ajuste para la relació grosor-intensidad en el perspex}
-\label{fig:aluminio}
+\label{fig:perspex}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=1.1\linewidth]{carton.jpg}
 \caption{Ajuste para la relació grosor-intensidad en el carton}
-\label{fig:aluminio}
+\label{fig:carton}
 \end{figure}
 
 
-En estas gráficas se puede apreciar que los coeficientes de absorción son respectivamente $\lambda_al = 4.04\pm0.25cm^{-1}$, $\lambda_perspex = 1.41\pm0.11cm^{-1}$ y $\lambda_carton = 0.50\pm0.04cm^{-1}$. El inverso de estos coeficientes nos darían una longitud de penetración para cada material, la cual es más intuitiva y más fácil de analizar. Dichas longitudes de penetración, con sus respectivos errores están dadas por: $d_al = 0.248\pm0.015cm$, $d_perspex = 0.709\pm0.055cm$ y $d_carton = 2.0\pm0.16cm$ .Así, según este indicador, el mejor filtro (entre los tres probados) para la radiación $\beta$ es el aluminio, seguido del perspex y luego del cartón.\\
+En estas gráficas se puede apreciar que los coeficientes de absorción son respectivamente $\lambda_{al} = 4.04\pm0.25cm^{-1}$, $\lambda_{perspex} = 1.41\pm0.11cm^{-1}$ y $\lambda_{carton} = 0.50\pm0.04cm^{-1}$. El inverso de estos coeficientes nos darían una longitud de penetración para cada material, la cual es más intuitiva y más fácil de analizar. Dichas longitudes de penetración, con sus respectivos errores están dadas por: $d_{al} = 0.248\pm0.015cm$, $d_{perspex} = 0.709\pm0.055cm$ y $d_{carton} = 2.0\pm0.16cm$ .Así, según este indicador, el mejor filtro (entre los tres probados) para la radiación $\beta$ es el aluminio, seguido del perspex y luego del cartón.\\
 
-\subsection{\label{sec:level2}Interferómetro de Michelson}
-Este experimento es análogo al de Fabry-Perot, solo que para evitar confusiones, las ondas que interfieren se hacen tomar caminos perpendiculares. En este caso procedimos de igual manera que en el experimento de Fabry-Perot y de los demás experimentos de interferometría. Los datos obtenidos en este caso se encuentran en la tabla \ref{table:Michelson}.\\
+\subsection{\label{sec:level2}Interacción de la radiación $\beta$ con campos magnéticos}
+En este experimento no se pretendía tomar medidas, sino verificar cualitativamente la influencia de un campo magnético sobre la radiación $\beta$. Específicamente se quería ver cómo se deflectaba la radiación al imponer el mencionado campo magnético. Para esto, se tomaron medidas de conteo durante 10 segundos para ángulos de $0$ a $180^o$ equiespaciados a $10^o$ a una distancia de 8 cm con los magnetos, sin los magnetos y con los magnetos invertidos. Los datos tomados se encuentran en la tabla \ref{table:beta}.\\
+
+Es preciso aclarar que hablamos únicamente de radiación $\beta$ dado que el único otro tipo de radiación que es cargada es la $\alpha$, la cual tiene el doble de carga que la radiación $\beta$ pero aproximadamente 8000 veces su masa, lo cual reduce el efecto de los campos magnéticos en un factor de aproximadamente 4000. En este sentido, el efecto del campo magnético solo será sobre la radiación $\beta$.\\
 
 \begin{table}[h!]
 \centering
  \begin{tabular}{|c|c|c|c|} 
  \hline
- $N Maximos$& $x_0(cm) \pm 0.1cm$ & $x_f(cm) \pm 0.1cm$ & $\lambda_{exp} (cm)$ \\ [0.5ex] 
+ $Angulo$& $Magnetos$ & $No Magnetos$ & $Magnetos Inv$ \\ [0.5ex] 
  \hline\hline
- 10 & 43.0 & 28.7 & 2.86 $\pm$ 0.005\\
- 10 & 45.7 & 31.5 & 2.84 $\pm$ 0.005\\
+ 0&221&300&200\\
+10&201&366&247\\
+20&166&430&306\\
+30&180&730&466\\
+40&303&1228&481\\
+50&492&1582&689\\
+60&707&1754&937\\
+70&845&1544&1293\\
+80&1051&1303&1533\\
+90&1177&1153&1547\\
+100&1299&976&1453\\
+110&1444&753&1235\\
+120&1652&652&932\\
+130&1720&569&674\\
+140&1505&473&527\\
+150&941&299&447\\
+160&602&193&362\\
+170&479&180&288\\
+180&383&209&215\\
 [1ex] 
  \hline
  \end{tabular}
- \caption{Máximos en el interferómetro de Michelson}
- \label{table:Michelson}
+ \caption{Efecto del campo magnético en la radiación $\beta$}
+ \label{table:beta}
 \end{table} 
 
-Los errores relativos asociados a estos experimentos son $0.1\%$ y $0.5\%$, lo cual era de esperarse, pues se trata de un experimento muy análogo al de Fabry-Perot.\\
+En esta tabla se puede notar que la intensidad de radiación tiende a concentrarse en $90^o$ cuando no hay magnetos involucrados. Esta dirección es la dirección de salida de los rayos producidos por el Ra-226 a través de su envoltura de plomo. Si se mira el efecto de los magnetos, en un caso la intensidad tiende a estar entre $0^o$ y $90^o$, y en el otro, su máximo tiende a concentrarse entre $90^o$ y $180^o$. Para entender este efecto de una mejor manera, se realizó una gráfica donde se mostraban los datos de la tabla anterior en un diagrama polar. En dicha figura \ref{fig:magneto}, en la escala angular se muestran los ángulos, y en la escala radial se grafica la intensidad.\\
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.1\linewidth]{magneto.jpg}
+\caption{Influencia de los campos magnéticos sobre la radiación $\beta$}
+\label{fig:magneto}
+\end{figure}
+
+En esta gráfica se puede apreciar que para el caso sin magnetos la función de intensidad es simétrica alrededor de su ángulo mayor, lo cual era de esperarse. Sin embargo, para los casos con magnetos, esta función de intensidad con respecto al ángulo tiende a rotar sin conservar la simetría alrededor de su máximo, favoreciendo el lado más cercano a la fuente de radiación ($90^o$). Esto puede ser explicad debido a los otros tipos de radiación que emite la muestra usada, $\alpha$ y $\gamma$, las cuales no se ven afectadas considerablemente por el campo magnético y por tanto se quedan en cerca a $90^o$. \\
+
+\subsection{\label{sec:level2}Interacción de la radiación $\gamma$ con campos magnéticos}
+Además de mostrar la influencia de los campos magnéticos sobre la radiación $\beta$, quisimos demostrar formalmente que estos campos no afectan la radiación $\gamma$. Para ello tomamos 4 medidas de 10 segundos con magnetos y sin ellos a la misma fuente radiactiva de Ra-226 cubierta siempre por una placa de aluminio. Los datos tomados con sus respectivos promedios y varianzas se encuentran en la tabla \ref{table:magplaca}.\\
+
+
+\begin{table}[h!]
+\centering
+ \begin{tabular}{|c|c|c|} 
+ \hline
+ Medida & Magnetos & No-Magnetos \\ [0.5ex] 
+ \hline\hline
+ 1&192&190\\
+2&216&192\\
+3&220&194\\
+4&231&208\\
+5&212&217\\
+$\bar{c}$&214.2&200.2\\
+$\sigma_c$&14.6&14.1\\
+[1ex] 
+ \hline
+ \end{tabular}
+ \caption{Efecto del campo magnético sobre la radiación $\gamma$}
+ \label{table:magplaca}
+\end{table}
+
+En dicha tabla se puede observar que cada valor cae dentro del rango de incertidumbre del otro, lo cual nos dice que dadas dichas incertidumbres, los conteos son prácticamente iguales. De esta manera, la radiación $\gamma$ no se ve afectada por un campo magnético. La diferencia entre los promedios, sin tener en cuenta las varianzas, la podemos atribuir a que el aluminio no bloquea totalmente la radiación $\beta$ y un remanente de la radiación $\beta$ que si es deflectada, afecta la medida.\\
+
+\subsection{\label{sec:level2}Tiempo de decaimiento}
+En este montaje pretendíamos medir el tiempo de decaimiento del gas radiactivo que rodeaba a una manta incandescente. Para ello encerramos el gas en un recipiente y medimos 4 conteos consecutivos de 60 segundos. En este caso se trabajó con el aire que rodeaba a la manta debido a su poca densidad, lo cual permite un tiempo de decaimiento más corto, observable con estos montajes. En este sentido, dicho aire es poco radiactivo y el efecto del ambiente juega un papel importante, por lo cual también fue medido. Las tablas con los datos obtenidos son \ref{table:decambiente} y \ref{table:decaire}.\\
+
+\begin{table}[h!]
+\centering
+ \begin{tabular}{|c|c|c|} 
+ \hline
+ Medida & Ambiente \\ [0.5ex] 
+ \hline\hline
+ 1&12\\
+ 2&17\\
+ 3&19\\
+ 4&26\\
+ $\bar{c}$&18.5\\
+ $sigma_c$&4.3\\
+[1ex] 
+ \hline
+ \end{tabular}
+ \caption{Radiación ambiente (Tiempo de decaimiento)}
+ \label{table:decambiente}
+\end{table}
+
+\begin{table}[h!]
+\centering
+ \begin{tabular}{|c|c|c|} 
+ \hline
+ Tiempo & $c$ & $\sigma_c$\\ [0.5ex] 
+ \hline\hline
+ 60&60&7.75\\
+ 120&43&6.56\\
+ 180&32&5.66\\
+ 240&27&5.20\\
+[1ex] 
+ \hline
+ \end{tabular}
+ \caption{Decaimiento de radiación del aire radiactivo}
+ \label{table:decaire}
+\end{table}
+
+En estos casos se puede apreciar que claramente los conteos del aire radiactivo disminuian con el tiempo que pasaba. Ahora, la ley de decaimiento, dada por la ecuación \ref{eq:tiempo} nos permite obtener un ajuste exponencial teniendo en cuenta que se tiene que restar la radiación del ambiente. Dicho ajuste se encuentra en la figura \ref{fig:deca}.\\
+
+\begin{equation}
+I(t) = I_0 e^{\frac{t}{\tau}}
+\label{eq:tiempo}
+\end{equation}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.1\linewidth]{decaimiento.jpg}
+\caption{Tiempo de decaimiento del aire que rodea una manta incandescente}
+\label{fig:deca}
+\end{figure}
+
+De esta gráfica se puede notar que el ajuste es muy preciso y arroja un tiempo de decaimiento de $0.00904\pm0.00023s^{-1}$, lo cual, en otras palabras nos dice que el aire que rodea la manta tiene un tiempo de decaimiento de 110 segundos, justamente observable en este experimento. A pesar de la propagación de error por la medida del ambiente y la propia medida del aire radiactivo, el error relativo de este ajuste fue de aproximadamente 2.5\%, el error relativo usual asociado a este montaje.\\
+
 
 \section{\label{sec:level1}Conclusiones}
- Durante la práctica se evidenció que la configuración del montaje es muy importante para la obtención de resultados, mucho más que en otras pácticas de laboratorio. Para una misma medición en un mismo montaje, el error relativo podía variar entre 0.3\% y 10\% con sólo cambios menores y ajustes pequeños. Esto se debe principalmente a los factores ya mencionados que afectaban la aguja del medidor y por tanto la medida. Además, en varios montajes, debido a que el equipo es bastante grande, la mesa en varios casos se quedaba pequeña.\\
+Una de las conclusiones más importantes de este experimento, la cual estuvimos utilizando durante todo el análisis numérico, fue la definición de la distribución de probabilidad que rige los decaimientos radiactivos. Dicha distribución es de Poisson y esto nos da el poder para deducir valores de varianza sin tener muestras estadísticas significativamente grandes.\\
 
-Sin embargo, se comprobaron cuantitativamente y cualitativamente los fenómenos ondulatorios de las microondas con éxito. Los fenómenos de refracción, reflexión, interferencia, difracción y polarización se pudieron apreciar con claridad. La determinación de la longitud de onda se pudo realizar con mucho exactitud en todos los casos y la fibra óptica demostró varios de sus fenómenos característicos y su utilidad en aplicaciones modernas.\\
+Además de esto, verificamos que la radiación ionizante se compone de los 3 tipos $\alpha$, $\beta$ y $\gamma$, los cuales se pueden clasificar de acuerdo a su poder de penetración. De estos tipos de radiación descubrimos que los rayos $\beta$ son cargados con masa pequeña y que los rayos $\gamma$ no tienen carga. Sobre los rayos $\alpha$ no hicimos experimentos explícitos con campos magnéticos, pero pudimos verificar que estos, a comparación de los rayos  $\beta$, no se ven afectados por campos magnéticos pequeños debido a su gran masa.\\
 
-Se concluye que la fuente de error más grande del experimento resultaba ser el detector mismo de microondas; la señal recibida variaba con mucha facilidad y esto se debe probablemente a que el detector podía actuar como reflector y esto podría generar un error en la medición. Asimismo, hay que tener en cuenta que las microondas son ondas esféricas y los modelos en muchas ocasiones están sujetos a una aproximación de ondas planas, lo cual también puede generar una fuente de error. El cuerpo humano también funciona como reflector parcial de ondas electromagnéticas y los usuarios pudieron así generar ruido en la medición. \\
+Descubrimos que algunas sales que son en principio no radiantes, tienen trazas de isótopos radiactivos que hacen que emitan radiación ionizante detectable con los montajes propuestos.\\
 
-Debe anotarse que la base del experimento es fundamental, la mesa en varias ocasiones se movía y el detector era tan sensible que la aguja cambiaba su posición con pequeños agitaciones de la mesa. De la misma forma, como se requería en muchos experimentos mover los detectores para estudiar el comportamiento de las ondas a diferentes distancias, la aguja podía moverse con el movimiento de la mesa cuasado por la fricción entre el detector y la mesa misma. \\
+Pudimos verificar además, con alrededor de 2\% de precisión, que la intensidad de radiación disminuía como el inverso de la distancia de la fuente al cuadrado y como una ley exponencial al penetrar cierta distancia en un material absorbente.\\
 
-Las aproximaciones hechas para los modelos en ocasiones no se cumplían. Esto se pudo ver claramente en el experimento de difracción, donde, para apreciar el patrón, se debería cumplir que la distancia entre rejillas sea mucho menor a la distancia de la fuente con el detector. Esto no se cumplía puesto que la mesa era demasiado corta para tal propósito.\\
+Los errores obtenidos fueron muy similares porque debido a la propagación de error de las medidas tomadas. Dicho error dependía del tamaño del conteo realizado y debido a que en muchos experimentos se usó el Ra-226, dichos conteos eran muy similares.\\
 
-A pesar de estas fuentes de error, el experimento resultó ser de gran utilidad en términos académicos. Es un equipo que es fácil de manipular y los fenómenos ondulatorios pueden percibirse con poca distorsión proveniente de todas las fuentes de error mencionadas. 
-\\
+En general, a pesar de la estocasticidad natural de cada experimento, se pudieron obtener resultados concretos con muy buena exactitud.\\
+
 
 
 
