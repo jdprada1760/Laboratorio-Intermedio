@@ -72,7 +72,7 @@
  Departamento de Física, Universidad de los Andes
 }%
 
-\date{10/09/2015}% It is always \today, today,
+\date{22/10/2015}% It is always \today, today,
              %  but any date may be explicitly specified
 
 \begin{abstract}
@@ -99,7 +99,7 @@ En caso contrario, la radiactividad artificial o inducida ocurre cuando se liber
 Por otra parte, dada su naturaleza de emisión, se puede catalogar la radiación en tres categorías diferentes:\\
 
 
--Radiación alfa ($ \alpha $): Es el flujo de partículas alfa, que consisten de dos neutrones con dos protones. En otras palabras, es la emisión de iones de $He^{2+}$. Este tipo de radiación es altamente ionizante pero muy poco penetrante y sólo se presenta cuando átomos con $A>100$ decaen para formar átomos más pequeños. La producción de una partícula alfa está dada por la ecuación:\\
+-Radiación alfa ($ \alpha $): Es el flujo de partículas alfa, que consisten de dos neutrones con dos protones. En otras palabras, es la emisión de iones de $He^{2+}$. Este tipo de radiación es altamente ionizante pero muy poco penetrante y sólo se presenta cuando átInstruction Manual and Experiment Guide for the PASCO scientific Model WA-9314Bomos con $A>100$ decaen para formar átomos más pequeños. La producción de una partícula alfa está dada por la ecuación:\\
 
 \begin{equation}
 	^{A}_{Z}X \to ^{A-4}_{Z-2}Y+\alpha
@@ -134,9 +134,10 @@ Los diferentes tipos de radiación requieren así, diferentes tipos de barreras 
 
 \section{\label{sec:level1}Montaje experimental}
 \textit{Contador Geiger-Muller}\\
+
 El dispositivo usado durante la práctica es un contador de Geiger-Muller. Éste es un dispositivo que sirve para medir la intensidad de la fuente radiactiva. El dispositivo consiste en un filamento conductor muy delgado dentro de un tubo metálico. Ambos están aislados por un gas inerte. De esta manera, cuando una partícula desprendida de un átomo que está en proceso de decaimiento, entra al detector e interactúa con el filamento, produce un impulso eléctrico cuya amplificación es audible. Esto se conoce como una cuenta. Así pues, a mayor cantidad de cuentas, mayor se considera que es la intensidad de la fuente radiactiva.\\
 
-Durante esta práctica utilizamos este contador en diferentes configuraciones para medir la radiación emitida por diversas fuentes radiactivas y por el ambiente. En general posicionábamos el detector el dispositivo Geiger en frente de una fuente como se muestra en la figura \ref{fig:montaje}. Con ayuda de los soportes que se muestran en dicha figura podíamos variar la distancia entre el detector y la fuente además de su ángulo. Además de esto, las escalas estaban impresas en la mesa de trabajo, por lo cual, la toma de medidas era sencilla.\\
+Durante este experimento utilizamos este contador en diferentes configuraciones según la guía \cite{guia}, para medir la radiación emitida por diversas fuentes radiactivas y por el ambiente. En general posicionábamos el detector el dispositivo Geiger en frente de una fuente como se muestra en la figura \ref{fig:montaje}. Con ayuda de los soportes que se muestran en dicha figura podíamos variar la distancia entre el detector y la fuente además de su ángulo. Además de esto, las escalas estaban impresas en la mesa de trabajo, por lo cual, la toma de medidas era sencilla.\\
 
 \begin{figure}[h!]
 \centering
@@ -555,7 +556,7 @@ Ahora, para verificar el alcance de la radiación $\alpha$, tenemos que obtener 
 
 En esta tabla se puede apreciar que la fracción de radiación $\alpha$ parada por el filtro de papel no varió significativamente en las distancias medidas. A pesar de esto si se pudo notar una disminución generalizada de esta radiación alrededor de los 5cm. Después de dicha distancia la fracción no varió generalizadamente. \\
 
-Ahora, debido a la interacción del aire con la radiación $\alpha$, esta no tiene mucho alcance dependiendo de su energía. Para el aire a presión constante y a $15^oC$, este alcance está dado por $D= 0.4769 E^{1.5}\frac{cm}{Mev}$. Si tenemos en cuenta la caida en la fracción de radiación $\alpha$, podemos encontrar que la muestra emitía dichos rayos con energías alrededor de $4.80 MeV$. Con un poco de investigación podemos intuir que dicha energía corresponde a la transición $Ra-226 \rightarrow Ra-222$, la cual es de $4.871Mev$. Si esta es, en efecto, la transición correcta, este método de cálculo de energía provoca únicamente un $2\%$ de error, congruente con los errores obtenidos anteriormente con estos montajes.\\
+Ahora, debido a la interacción del aire con la radiación $\alpha$, esta no tiene mucho alcance dependiendo de su energía. Para el aire a presión constante y a $15^oC$, este alcance está dado por $D= 0.4769 E^{1.5}\frac{cm}{Mev}$. Si tenemos en cuenta la caida en la fracción de radiación $\alpha$, podemos encontrar que la muestra emitía dichos rayos con energías alrededor de $4.80 MeV$. Con un poco de investigación \cite{base} podemos intuir que dicha energía corresponde a la transición $Ra-226 \rightarrow Ra-222$, la cual es de $4.871Mev$. Si esta es, en efecto, la transición correcta, este método de cálculo de energía provoca únicamente un $2\%$ de error, congruente con los errores obtenidos anteriormente con estos montajes.\\
 
 \subsection{\label{sec:level2}Influencia del grosor de los materiales en la radiación $\beta$}
 En este experimiento medimos la influencia del grosor de materiales como el cartón, perspex y aluminio sobre la radiación $\beta$ de una fuente de Ra-226. Para ello tomamos diferentes medidas de conteo durante 10 segundos con la muestra a 3 cm del detector. Los datos obtenidos se encuentran en las tablas \ref{table:carton}, \ref{table:perspex} y \ref{table:aluminio}.\\
@@ -794,8 +795,9 @@ En general, a pesar de la estocasticidad natural de cada experimento, se pudiero
 
 
 \begin{thebibliography}{99} 
-\bibitem{Griffiths} David J. Griffiths,{\it Introduction to electrodynamics 4Ed.}\\ 
-\bibitem{guia} ,{\it Instruction Manual and Experiment Guide for the PASCO scientific Model WA-9314B}{1991}.\\ 
+\bibitem{base}{\it Physical Measurement Laboratory}{http://www.nist.gov/pml/index.cfm}.\\ 
+\bibitem{moderna}Serway, A; Moses, C; Moyer, C {\it Modern Physics} { 3rd edition} { Brooks Cole Pub Co} { 2004} \\
+\bibitem{guia} Fiebich, Rudolf.{\it Student Experiments Physics. Radiactivity}.\\ 
 \end{thebibliography}
 
 
