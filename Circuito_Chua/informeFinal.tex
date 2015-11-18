@@ -1,0 +1,494 @@
+% ****** Start of file apssamp.tex ******
+%
+%   This file is part of the APS files in the REVTeX 4.1 distribution.
+%   Version 4.1r of REVTeX, August 2010
+%
+%   Copyright (c) 2009, 2010 The American Physical Society.
+%
+%   See the REVTeX 4 README file for restrictions and more information.
+%
+% TeX'ing this file requires that you have AMS-LaTeX 2.0 installed
+% as well as the rest of the prerequisites for REVTeX 4.1
+%
+% See the REVTeX 4 README file
+% It also requires running BibTeX. The commands are as follows:
+%
+%  1)  latex apssamp.tex
+%  2)  bibtex apssamp
+%  3)  latex apssamp.tex
+%  4)  latex apssamp.tex
+%
+\documentclass[%
+ reprint,
+%superscriptaddress,
+%groupedaddress,
+%unsortedaddress,
+%runinaddress,
+%frontmatterverbose, 
+%preprint,
+%showpacs,preprintnumbers,
+%nofootinbib,
+%nobibnotes,
+%bibnotes,
+ amsmath,amssymb,
+ aps,
+%pra,
+%prb,
+%rmp,
+%prstab,
+%prstper,
+%floatfix,
+]{revtex4-1}
+
+\usepackage{graphicx}% Include figure files
+\usepackage{scrextend}
+\usepackage[utf8]{inputenc}
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+%\usepackage{hyperref}% add hypertext capabilities
+%\usepackage[mathlines]{lineno}% Enable numbering of text and display math
+%\linenumbers\relax % Commence numbering lines
+
+%\usepackage[showframe,%Uncomment any one of the following lines to test 
+%%scale=0.7, marginratio={1:1, 2:3}, ignoreall,% default settings
+%%text={7in,10in},centering,
+%%margin=1.5in,
+%%total={6.5in,8.75in}, top=1.2in, left=0.9in, includefoot,
+%%height=10in,a5paper,hmargin={3cm,0.8in},
+%]{geometry}
+
+\begin{document}
+
+\preprint{APS/123-QED}
+
+\title{Espectros Atómicos}% Force line breaks with \\
+\thanks{}%
+
+\author{Jesus Prada}
+ \email{jd.prada1760@uniandes.edu.co}
+ \altaffiliation[Also at ]{Departamento de Física, Universidad de los Andes}%Lines break automatically or can be forced with \\
+\author{Sergio Iv\'an Rey}%
+ \email{si.rey1826@uniandes.edu.co}
+\affiliation{%
+ Departamento de Física, Universidad de los Andes
+}%
+
+\date{18/11/2015}% It is always \today, today,
+             %  but any date may be explicitly specified
+
+\begin{abstract}
+En este proyecto montamos el circuito de Chua a partir del ensamble de elementos pasivos y activos, con el fin de verificar su comportamiento caótico. Además de esto, realizamos simulaciones que verificaban el caos y nos ayudaron a encontrar las condiciones bajo las cuales se producía. Se logró verificar dicho caos experimentalmente y se descubrió que este comportamiento impredecible depende fuertemente de la configuración de parámetros del circuito y de sus condiciones iniciales e historia. Dado el comportamiento caótico del sistema, solo se logró verificar experimentalmente que el tamaño del rango de resistencias para las cuales hubo caos concuerda con lo predicho computacionalmente y es de aproximadamente $2k\Omega$. Esto lo tomamos como cuantificación del caos para comparar el modelo teórico-computacional con su version experimenta.\\
+\end{abstract}
+
+
+\keywords{Espectroscopía, Espectros Atómicos, Modelo de Bohr, Rydberg}%Use showkeys class option if keyword
+                              %display desired
+\maketitle
+
+%\tableofcontents
+
+\section{\label{sec:level1}Introducci\'on}
+La teoría del caos es la teoría de lo impredecible, de los sistemas no lineales donde pequeñísimas variaciones en las condiciones iniciales se propagan y se amplían en cascada en el desarrollo del sistema. En otras palabras, como lo dijo Edward Lorenz, caos es "Cuando el presente determina el futuro, pero el presente aproximado no determina aproximadamente el futuro". Este efecto caótico es característico de varios sistemas no lineales, y es coloquialmente conocido como el efecto mariposa, el cual dice que una mariposa aleteando en Colombia, pueden causar un huracán en Japón. Posiblemente, debido a lo caótico de sistemas como la atmósfera terrestre, si la mariposa no hubiera aleteado en un instante y posición exactos, el huracán no se habría producido. De esta manera, dado que no podemos conocer las condiciones iniciales de un sistema con exactitud infinita, nuestra predicción sobre el desarrollo caótico se torna prácticamente nula.\\
+
+Los sistemas físicos de la vida real son en su mayoría caóticos si se analizan hasta cierto punto de detalle. Ejemplos de estos sistemas son en general complicados, como el clima, los fluidos turbulentos, etc. El sistema mecánico más simple que exhibe comportamiento caótico es el péndulo doble, sin embargo, su estudio sería difícil de cuantificar y el sistema en general sería complicado de aislar de influencias ambientales. A pesar de esto, existen sistemas electrónicos simples, que son mucho más versátiles y también exhiben comportamiento caótico. Este es el caso del circuito de Chua.\\
+
+El circuito de Chua, diseñado por Leon Chua en 1983 es el ejemplo más simple de un sistema electrónico que presente el comportamiento caótico. Este sistema ha sido de gran acogida entre la comunidad científica dada la facilidad de construcción. Las especificaciones del sistema, descritas por el mismo Chua \cite{chua}, son las siguientes: \\
+
+\begin{addmargin}[3em]{2em}
+"Design a physically realizable autonomous circuit having exactly two or three unstable equilibrium points. The circuit should contain the least possible number of 2-terrninal linear passive resistors, inductors, and capacitors, and exactly one 2-terrninal nonlinear resistor characterized by an \textit{eventuallypassive, piecewise-linear, voltage-controlled v - i characteristic}" \\
+\end{addmargin}
+
+Como veremos, se implementará en este caso, la función lineal a trozos. Para completar el diseño del circuito, es necesario determinar el número mínimo de componentes que éste va a tener; se sabe que un sistema que pueda ser descrito por ecuaciones diferenciales ordinarias con menos de tres variables de estado, no puede ser caótico, \cite{chua} por lo cual se propondrá que existan tres elementos de almacenamientos de energía lineales pasivos (en nuestro caso serán dos capacitores y una inductancia). \\
+
+El diagrama del circuito se puede ver en la figura \ref{fig:chua}\cite{isaza}, en este caso se pueden observar con claridad las componentes del sistema, con $R_n$ la resistencia NO lineal o Diodo de Chua. \\
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{"chua"}
+\caption{Montaje del circuito de Chua}
+\label{fig:chua}
+\end{figure}
+
+Es fácil ver que las ecuaciones que describen el sistema son:\\
+
+\begin{equation}
+	C_1 \frac{dV_1}{dt}=\frac{1}{R}(V_2-V_1)-I_{NL} (V_1)
+\label{eq:1}
+\end{equation}
+
+\begin{equation}
+	C_2\frac{dV_2}{dt}=\frac{1}{R}(V_1-V_2)+I_L
+\label{eq:2}
+\end{equation}
+
+\begin{equation}
+	L\frac{dI_L}{dt}=-V_2-rI_L-V(t)
+\label{eq:3}
+\end{equation}
+
+Con $V_1, V_2$ la caída de voltaje a través de los capacitores $C_1,C_2$ y $V(t)$ el voltaje aplicada a la inductancia. \\ 
+
+La función $I_{NL} (V_1)$ describe la corriente (No lineal) a través del diodo de Chua y es fácil ver su dependencia de $V_1$. Esta función está descrita por:\\
+
+\begin{equation}
+	I_{NL}(V_1)=\frac{m_0}{R_0}V_1 + \frac{(m_1-m_0)}{2R_0}(|V_1+V_0|-|V_1-V_0|)
+\end{equation}
+
+Esta es una función lineal por trozos, lo cual es fácil de verificar si se escribe:\\
+\begin{equation}
+	I_{NL}(V_1) =
+	\left\{
+	\begin{array}{lll}
+		\frac{m_0}{R_0} V_1 + \frac{(m_0 - m_1)}{R_0}V_0 & \mbox{if } V_1 \leq -V_0  \\
+		\frac{m_1}{R_0} V_1	& \mbox{if } |V_1| < E \\
+		\frac{m_0}{R_0} V_1 + \frac{(m_1 - m_2)}{R_0}V_0 & \mbox{if } V_1 \geq V_0 \\
+	\end{array}
+	\right\}
+\label{eq:diodo}
+\end{equation}
+
+En este caso, $R_0$ es una unidad de resistencia arbitraria para que las pendientes $m_0, m_1$ sean admimensionales. La curva está dividida en tres segmentos: Los dos segmentos externos tienen pendiente $m_0$ y en el medio la pendiente es $m_1$. En este caso, los puntos de inflexión están dados por el valor $V_0$. Este es un valor arbitrario que puede variar según las características del sistema. La curva se puede ver en la figura \ref{fig:diodecharacteristic}\cite{sitio}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{"characteristic"}
+\caption{Curva de Corriente-Voltaje para el diodo de Chua}
+\label{fig:diodecharacteristic}
+\end{figure}
+
+Cabe resaltar que el diodo de Chua a pesar de ser no lineal, no es caótico por sí mismo. El caos del sistema es formado por los componentes del circuito actuando en conjunto \cite{chua}. El diodo es responsable de la no linealidad de las ecuaciones. Las capacitancias, separadas por la resistencia acumulan carga, lo cual le da memoria al sistema y acumula las perturbaciones no lineales. Finalmente, la inductancia hace que la evolución del sistema dependa del estado actual, lo cual puede hacer la diferencia entre obtener caos o no en el circuito.\\
+
+Ahora, para analizar la evolución del circuito adoptamos el abordaje expuesto en \cite{Paper}.Teniendo todo lo anterior en cuenta, las ecuaciones de evolución del circuito pueden ser reescritas de forma matricial para un mejor análisis matemático de los puntos estables del circuito. Dicha evolución es descrita entonces por la ecuación \ref{eq:matriz}.\\
+
+\begin{equation}
+\frac{d\vec{x}}{dt}
+= M\vec{x} + 
+\begin{matrix}
+	\begin{pmatrix}
+	f(\vec{x})\\
+	0\\
+	-\frac{V(t)}{L}\\
+	\end{pmatrix}
+	\end{matrix}
+\label{eq:matriz}
+\end{equation}
+
+Donde:\\
+
+\begin{equation}
+ \vec{x} = \begin{matrix}
+	\begin{pmatrix}
+	V_1\\
+	V_2\\
+	I_L\\
+	\end{pmatrix}
+	\end{matrix}
+\end{equation}
+
+\begin{equation}
+ f(\vec{x}) = 
+ \left\{
+	\begin{array}{lll}
+		\frac{(m_0 - m_1)}{R_0}V_0 & \mbox{if } V_1 \leq -V_0 \\
+		0	& \mbox{if } |V_1| < E \\
+	    \frac{(m_1 - m_0)}{R_0}V_0 & \mbox{if } V_1 \geq V_0 \\
+	\end{array}
+	\right\}
+\end{equation}
+
+\begin{equation}
+M = \begin{matrix}
+	\begin{pmatrix}
+	\frac{-1}{RC_1}- \frac{m(\vec{x})}{C_1} &\frac{-1}{RC_1}& 0\\
+	\frac{1}{RC_2} & \frac{-1}{RC_2} & \frac{1}{C_2}\\
+	0 & \frac{-1}{L} & -\frac{r}{L}\\
+	\end{pmatrix}
+	\end{matrix}
+\end{equation}
+
+\begin{equation}
+ m(\vec{x}) = 
+ \left\{
+	\begin{array}{lll}
+		\frac{m_0}{R_0} & \mbox{if} |V_1| \geq V_0 \\
+		\frac{m_1}{R_0}	& \mbox{if} |V_1| < V_0 \\
+	\end{array}
+	\right\}
+\end{equation}
+
+Claramente la condición de estabilidad estará dada por:\\
+
+\begin{equation}
+M\vec{x} =
+\begin{matrix}
+	\begin{pmatrix}
+	-f(\vec{x})\\
+	0\\
+	\frac{V(t)}{L}\\
+	\end{pmatrix}
+	\end{matrix}
+\end{equation}
+
+ Y dada la naturaleza $f(\vec{x})$ y $M$ através de $m(\vec{x})$, habrán 3 puntos estables dependiendo del determinante de la matriz M.\\
+ 
+Si el determinante de la matriz es diferente de 0, el punto estable estará dado por:\\
+\begin{equation}
+\vec{x_e} = M^{-1}
+\begin{matrix}
+	\begin{pmatrix}
+	-f(\vec{x})\\
+	0\\
+	\frac{V(t)}{L}\\
+	\end{pmatrix}
+	\end{matrix}
+\end{equation}
+
+Y dado esto, en la localidad del punto de equilibrio $\vec{x} = \vec{x_e} +\vec{y}$, la evolución del sistema estará dada por:
+
+\begin{equation}
+\frac{d\vec{y}}{dt} = M\vec{y}
+\end{equation}
+
+Ahora, si los valores de la matriz M son distintos (diagonalizando en el campo complejo), la evolución de la perturbación $\vec{y}$ alrededor del punto estable estará dada por:\\
+
+\begin{equation}
+\vec{y}(t) = \sum_{i=1}^{3} (\vec{\eta}_i\cdot\vec{y}(0))e^{\lambda_i t}\vec{\eta}_i
+\end{equation}
+
+Ahora, si todos los valores propios son reales, esta perturbación diverge o converge alrededor del punto. En otras palabras, si son todos valores propios reales positivos, la solución diverge y nos encontramos en un punto de equilibrio inestable. Si todos los valores propios son reales negativos, la solución de la perturbación converge a 0, es decir, terminaremos en el punto de equilibrio estable. El único caso interesante que nos queda es cuando la solución tiene valores propios que le dan cierto grado de periodicidad a la perturbación, haciéndola tomar trayectorias elípticas (en general no cerradas) alrededor del punto de equilibrio, en el plano de los vectores propios asociados a los valores propios imaginarios.\\
+
+
+En este caso la solución de la perturbación estará dada por:\\
+
+\begin{equation}
+\vec{y}(t) = Ce^{\lambda t}\vec{\eta} + e^{\gamma t}(K_1cos(\omega_1t+\delta_1)\vec{\phi_1}+
+ K_2cos(\omega_2t+\delta_2)\vec{\phi_2})
+\end{equation}
+
+Donde queda claro que los valores propios complejos están dados por: $\gamma \pm i\omega$. Esta ecuación puede ser escrita de una mejor manera:\\
+
+\begin{equation}
+\vec{y}(t) = \vec{Y_exp} + \vec{Y_per}
+\end{equation}
+
+Con:\\
+
+\begin{equation}
+\vec{Y_exp} = Ce^{\lambda t}\vec{\eta} 
+\end{equation}
+
+\begin{equation}
+\vec{Y_per} = e^{\gamma t}(K_1cos(\omega_1t+\delta_1)\vec{\phi_1}+
+ K_2cos(\omega_2t+\delta_2)\vec{\phi_2})
+\end{equation}
+
+De aquí cabe resaltar que deseamos $\gamma >0$ y $\lambda> 0$, para que el sistema no decaiga hasta el punto estable. Queremos, por el contrario, que la solución intente diverger, pero al intentarlo, pase a la otra zona definida por la función característica donde cambia la forma de la evolución y así sucesivamente, formado caos por las espirales no necesariamente periódicas, dadas por las funciones trigonométricas.\\
+
+Finalmente tenemos que la solución por partes, teniendo en cuenta que $\vec{y}$ es la distancia del estado del sistema al equilibrio, está dada por:\\
+
+\begin{equation}
+\vec{x}(t) = \vec{x_e}+ \vec{Y_exp} + \vec{Y_per}
+\label{sis}
+\end{equation}
+
+Con esto, tenemos las herramientas suficientes para analizar la evolución del circuito en cada una de las zonas definidas por la ecuación \ref{eq:diodo}.\\
+\section{\label{sec:level1}Montaje experimental}
+En este proyecto decidimos montar el circuito de Chua. Dicho circuito se muestra en la figura \ref{fig:chua}, y necesita únicamente de capacitancias, resistencias (y potenciómetros), inductancias y amplificadores operacionales. Con el fin de alimentar los amplificadores operacionales, se utilizan fuentes de voltaje directo y para medir voltajes y corrientes en el circuito, se usan los osciloscopios y los multímetros, dependiendo del tipo de medidas.\\
+
+El diodo de Chua no es comercial, por lo que su fabricación queda a nuestra cuenta. Existen muchas configuraciones de elementos pasivos y activos que producen la curva característica de la figura \ref{fig:diodecharacteristic}. Para este proyecto decidimos realizar el montaje del diodo expuesto en la figura \ref{fig:diodoMontaje}.\\
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{"diodoMontaje"}
+\caption{Montaje del diodo de Chua}
+\label{fig:diodoMontaje}
+\end{figure}
+
+Una vez montado el circuito, con ciertas especificaciones de elementos pasivos y activos, queda encontrar el caos. Para esto, debido a su naturaleza impredecible, escogimos variar el parámetro de resistencia $R$ hasta observar dicho caos. Este parámetro es un factor importante en la determinación de la matriz de evolución del sistema.\\
+
+\section{\label{sec:level1}Resultados y An\'alisis}
+\subsection{\label{sec:level2}El Diodo de Chua}
+
+El elemento primordial del circuito de Chua es claramente el diodo de Chua, el cual no es fabricado ni comercializado por alguna empresa conocida. Dado esto, la fabricación de dicho diodo corrió por nuestra parte. Según las especificaciones recomendadas en \cite{pagina}, decidimos realizar el montaje mostrado en la figura \ref{fig:diodoMontaje}. Dichas recomendaciones se encuentran explícitas a continuación:\\
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|}
+	\hline $ Elemento $ & $Valor$ \\ 
+	\hline\hline
+	$R_1$ & $220 \Omega$ \\
+	$R_2$ & $220 \Omega $\\
+	$R_3$ & $2.2K \Omega $\\
+	$R_4$ & $22.0K \Omega$ \\
+	$R_5$ & $22.0K \Omega$ \\
+	$R_6$ & $3.3K \Omega $\\
+		[1ex] 
+ \hline
+ \end{tabular} 
+  \caption{Valores de resistencias en el diodo de Chua}
+\label{table:valoresdiodo} 
+\end{table}
+
+Lo primordial en este montaje es verificar la función de corriente-voltaje característica del diodo de Chua. En un principio intentamos medir dicha función sobre el montaje utilizando amplificadores operacionales de referencia $UA741$. Al evaluar la corriente en un voltaje de $19V$, la corriente de salida superó a la tolerada por dicho amplificador, por lo que se quemó, derritiendo en el proceso, una protoboard.\\
+
+En ese momento, decidimos cambiar los amplificadores por unos recomendados por expertos electrónicos, los de referencia $LM358$. Sin embargo, al medir la función de corriente para este montaje, descubrimos que funcionaba a la perfección para voltajes positivos, pero mara voltajes negativos, la gráfica no era antisimétrica como debería ser, sino totalmente asimétrica.\\
+
+La función característica medida para el diodo de Chua con este amplificador se encuentra en la figura \ref{fig:intento1}.\\
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{"intento1"}
+\caption{Curva de Corriente-Voltaje para el diodo de Chua con LM358}
+\label{fig:intento1}
+\end{figure}
+
+Acá se puede notar que para voltajes negativos la corriente inducida es bastante grande y positiva. Mirando en detalle el acople diodo-capacitor, cuando el capacitor está cargado, creará una corriente positiva, la cual provocará un voltaje negativo que intentará descargar el capacitor. Esto no es raro si la función característica fuera antisimétrica, esto provocaría una especie de ciclo de carga y descarga en el capacitor, sin embargo, para esta función claramente asimétrica, cuando el sistema intente entrar en la fase de carga negativa del capacitor, la corriente inducida por el diodo lo sacará de dicho estado inmediatamente.\\
+
+Para mostrar lo descrito anteriormente, intentamos obtener caos en el circuito con este diodo medianamente funcional. Al medir el voltaje que pasa por ambos capacitores en función del tiempo, obtuvimos los siguiente:\\
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{"intento1foto"}
+\caption{Evolución del sistema LM358}
+\label{fig:intento1foto}
+\end{figure}
+
+Aquí, debido a que fué un intento "fallido", no vale la pena mencionar los valores de capacitancias, inductancias y resistencias, ya que se usaron los mismos en el intento exitoso. En esta gráfica se puede ver que la función es claramente no simétrica, y cuando el sistema intenta entrar a voltajes negativos en el capacitor $C_1$, el sistema es rápidamente devuelto a lo valores positivos. Esto puede ser claramente apreciado en la parte inferior izquierda de dicha gráfica.\\
+
+Además de esta función, se pudo obtener una curva cerrada alrededor del punto de equilibrio en el eje positivo de $V_1$, la cual se muestra a continuación. En este caso el origen se encuentra en el cuadrante 3 de la gráfica, al igual que en la figura anterior.\\
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{"intento1estable"}
+\caption{Curva cerrada alrededor de un punto estable en el eje positivo de voltaje}
+\label{fig:intento1estable}
+\end{figure}
+
+Por más que variamos los valores de la resistencia R (ver figura \ref{fig:chua}) y las condiciones iniciales del sistema, no pudimos obtener caos, por lo que verificamos que la función característica del diodo de Chua es parte vital del caos del sistema.\\
+
+Teniendo esta experiencia en cuenta, descubrimos que el amplificador $LM358$ utilizado tiene problemas con voltajes negativos de entrada, lo cual es perfectamente razonable debido a que este amplificador recibe únicamente un voltaje positivo de entrada, y tierra.\\
+
+Así las cosas, decidimos volver a montar el diodo de Chua, esta vez con amplificadores $UA741$, intentando examinar la función característica en voltajes pequeños que no saturaran ni quemaran el diodo. Este intento fue exitoso y arrojó la función característica que se muestra a continuación:\\ 
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{"intento2"}
+\caption{Curva de Corriente-Voltaje para el diodo de Chua con UA741}
+\label{fig:intento1}
+\end{figure}
+
+Como se puede notar, el cambio de pendiente es claro y la función es claramente impar, con lo que podemos proseguir con el desarrollo del circuito. De esta gráfica es importante obtener las pendientes experimentales haciendo la respectiva regresión lineal para cada trozo. En este caso encontramos los siguientes valores, y los respectivos ajustes se encuentran graficados a continuación.\\
+
+\begin{equation}
+\frac{m_0}{R_0} = -0.8240\frac{ma}{V}
+\end{equation}
+\begin{equation}
+\frac{m_1}{R_0} = -0.4399\frac{ma}{V}
+\end{equation}
+\begin{equation}
+V_0 = 0.875V
+\end{equation}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{"fit"}
+\caption{Fit para la curva de Corriente-Voltaje para el diodo de Chua con UA741}
+\label{fig:fit}
+\end{figure}
+
+Los coeficientes de correlación fueron de 0.9999, lo cual demuestra la precisión de los ajustes. Para efectos prácticos, debido al caos del sistema, no vale la pena tomar en cuenta errores relativos.\\
+
+Así las cosas, podemos pasar a la parte de simular el sistema para intentar predecir los valores iniciales y el valor de resistencia que producirá caos. Esto se hace por medio de simulaciones.\\
+
+\subsection{\label{sec:level2}Simulaciones}
+Además del valor experimental de las simulaciones de predecir las condiciones para obtener caos en el circuito, estas son de vital importancia para verificar los voltajes y las corrientes umbrales y tener cuidado con los elementos electrónicos del circuito y con los aparatos de medición y preparación.\\
+
+Teniendo en cuenta las ecuaciones \ref{eq:1}-\ref{eq:3}, es sencillo, con ciertas condiciones iniciales dadas por parámetro, obtener la evolución temporal del circuito por métodos computacionales. El proceso es en realidad simple y no requiere mucho poder computacional si se tienen los parámetros. La integración de las mencionadas ecuaciones se hace simplemente con Runge-Kutta de cuarto orden, para obtener mayor precisión.\\
+
+Teniendo esto en cuenta, escogimos los valores experimentales lo más cercano posibles a los teóricos sugeridos de capacitancias e inductancias recomendados en la página \cite{sitio}. Dichos valores se encuentran expresados en la tabla \ref{table:valorescircuito}, y junto a la función característica del diodo, determinan por completo (en teoría) la evolución del circuito. Estos valores recomendados son tales que la evolución del sistema tiene la forma de la ecuación \ref{sis}, es decir, la matriz de evolución, o más bien las matrices de evolución son invertibles, con único valor propio real positivo, tal que haya caos en el sistema (la parte real de sus valores propios imaginarios también debe ser positiva).\\
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|}
+	\hline $ Elemento $ & $Valor Real$ & $Valor teorico sugerido$ \\ 
+	\hline\hline
+	$C_1$ & $8nF$ & $10nF$ \\
+	$C_2$ & $103nF$& $100nF$ \\
+	$R$ & $Variable$& $Variable$ \\
+	$L$ & $18mH$ & $15mH$ \\
+	$V(t)$ & $0$ & $0$ \\
+	$r$ & $ 0 $& $0$ \\
+		[1ex] 
+ \hline
+ \end{tabular} 
+  \caption{Valores de los elementos en el circuito de Chua}
+\label{table:valorescircuito} 
+\end{table}
+
+Con estos valores, y un valor inicial de voltaje del capacitor $C_1$ ( el resto de valores de $\vec{x}$ tomados nulos ) se realizaron diferentes simulaciones para verificar el caos. Con las cuales obtuvimos comportamiento caótico en $\vec{x}$ para valores de resistencia entre $1950\Omega y 2050\Omega$. Las gráficas se encuentran a continuación.\\
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{"simulacion"}
+\caption{Simulacion $V_1 Vs V_2$ para R = 1.9$K\Omega$}
+\label{fig:simulacion}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{"simulacion2"}
+\caption{Simulacion $V_1 Vs V_2$ para R = 2.05$K\Omega$}
+\label{fig:simulacion2}
+\end{figure}
+
+De estas gráficas es importante notar que las espirales producen voltajes de a lo sumo 15 voltios, y que para una resistencia mayor, la espiral es más grande en cuestión de voltaje. Esto sugiere que debemos acercarnos al valor de resistencia sugerido para el caos desde resistencias bajas hasta altas, subiendola gradualmente através de un potenciómetro.\\
+
+Con esto nos damos por servidos con las simulaciones y procedemos a verificar lo predicho experimentalmente.\\
+\section{\label{sec:level1}Caos experimental}
+Para la parte práctica del proyecto, utilizamos los valores experimentales expuestos en la tabla \ref{table:valorescircuito} y montamos el circuito de Chua. Variando la resistencia $R$ como lo sugirió la simulación. En principio no vimos caos, como sucedió en todo el trayecto de resistencia desde $200\Omega$ hasta aproximadamente $2000\Omega$. En la gráfica \ref{fig:experimento1} se pueden apreciar las curvas cerradas obtenidas en dicho rango de resistencia.\
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{"experimento1"}
+\caption{$V_1 Vs V_2$ Experimental para algún $R \in [200\Omega,2000\Omega]$}
+\label{fig:experimento1}
+\end{figure}
+
+Sin embargo, a partir de aproximadamente $2000\Omega$, hasta  aproximadamente $2200\Omega$ empezamos a notar el caos predicho en el circuito. Y para exactamente $2.18K\Omega$ tomamos la siguiente fotografía.\\
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{"experimento2"}
+\caption{$V_1 Vs V_2$ Experimental para algún $R =2.18K\Omega]$}
+\label{fig:experimento2}
+\end{figure}
+
+Con lo cual verificamos el caos.\\
+
+Cabe resaltar que en un principio se intentó, sin éxito, buscar el caos en el rango de frecuencias predichas por la simulación (y en el rango permitido por el potenciómetro $(200-2M)\Omega$) para una configuración con $C_1 = 96nF, C_2 = 12nF$. Además de esto, en el caso exitoso, el caos no fue logrado inmediatamente, sino hasta que se impuso la condición inicial $V_1 = 0.9V$. Estas experiencias nos muestran lo delicado que es el sistema ante perturbaciones de sus parámetros y ante sus condiciones iniciales. El caos del circuito fue una vez más demostrado, esta vez, experimentalmente.\\
+
+
+
+
+\section{\label{sec:level1}Conclusiones}
+En este proyecto pudimos entender y verificar la naturaleza caótica del circuito de Chua experimentalmente, teóricamente y por medio de simulaciones. Verificamos que la presencia del caos depende fuertemente de los parámetros del circuito y de su historia.\\
+
+El caos en el circuito de Chua depende de la configuración de sus puntos estables y de los valores propios y vectores propios que forman la matriz de evolución. Estos valores estables y el comportamiento en sus cercanías depende de todos los parámetros del circuito en conjunto y dichos valores pueden hacer la diferencia entre una solución divergente del sistema, otra convergente a los puntos estables u otras periódicas o caóticas.\\
+
+Experimentalmente, escoger los elementos a usar en el circuito es muy importante, ya que estos pueden o no ser de buena calidad (proporcionando valores alejados alos que dicen ser), o pueden no corresponder en absoluto a las necesidades del circuito, como fue el caso del uso de amplificadores LM358 que tenían problemas para voltajes negativos.\\
+
+Demostramos por medio de la experiencia la importancia de simular circuitos antes de probarlos. Esto puede prevenir accidentes en el laboratorio y puede dar una guía de donde buscar los valores esperados, ahorrando tiempo y posiblemente daños al experimentalista.\\
+
+Las simulaciones concordaron de manera sorprendente con sus contrapartes experimentales. Así verificamos que el tamaño del rango de resistencias en el que hay caos es de aproximadamente $2K\Omega$. A pesar de que en las simulaciones este rango tiene diferente inicio y final, está muy cercano al valor experimental. Esto se lo podemos adjudicar al caos general del circuito y a los rangos de tolerancia de los valores experimentales  de los elementos pasivos utilizados.\\
+
+
+\begin{thebibliography}{99} 
+\bibitem{sitio}Valentin Siderskiy,{\it \ Chua's Circuit\ }{http://www.chuacircuits.com/}.\\
+\bibitem{Paper} Michael Peter Kennedy,{\it Three steps to chaos- Part II: A Chua's circuit primer \ }{1993} \\ 
+\bibitem{isaza} D. Campos Romero, J. F. Isaza Delgado \textit{Prolegómenos a los sistemas dinámicos} Universidad Nacional de Colombia, 2002.
+\bibitem{chua} L.O. Chua \textit{The Genesis of Chua's Circuits} AEÜ - International Journal of Electronics and Communications, \textbf{46} 250-257, 1992
+\end{thebibliography}
+
+\end{document}
+%
+% ****** End of file apssamp.tex ******
